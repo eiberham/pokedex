@@ -22,7 +22,9 @@ First step, clone the repo.
 
 Then run the following command to install all the project dependecies:
 
-run npm install
+```console
+foo@bar:~$ npm install
+```
 
 enjoy!
 
