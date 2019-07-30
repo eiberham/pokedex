@@ -31,9 +31,7 @@ You can find all available scripts in the package.json file
 ## Note
 
 It was solely a practice to start learning hooks stuff, if you have some suggestion, enhancement or 
-comment, just let me now.
-
-I'm looking forward to add new functionality and try to use the rest of hooks and even create my own 
+comment, just let me now. I'm looking forward to add new functionality and try to use the rest of hooks and even create my own 
 as i learn.
 
 
