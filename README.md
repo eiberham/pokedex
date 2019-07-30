@@ -20,13 +20,25 @@ Below you can see a screenshot of the end result:
 
 First step, clone the repo.
 
-Then run the following command to install all the project dependecies:
+```console
+foo@bar:~$ git clone https://github.com/wwleak/pokedex.git
+```
+
+Then run the following command within the project folder to install all the dependecies:
 
 ```console
 foo@bar:~$ npm install
 ```
 
-enjoy!
+Afterwards run the following command:
+
+```console
+foo@bar:~$ npm run start
+```
+
+Now if you go on localhost://3000 you should see it.
+
+Enjoy!
 
 ## Available Scripts
 
