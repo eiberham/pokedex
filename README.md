@@ -1,4 +1,4 @@
-## Podedex.
+## Pokedex.
 
 This is a pokedex built with React leveraging basic hooks functionality and the pokémon api,
 for the ui i used flexbox for positioning elements and styled components to give it some 
