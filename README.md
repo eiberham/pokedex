@@ -12,7 +12,9 @@ experience.
 
 Below you can see a screenshot of the end result:
 
-<span align="center">![Alt text](pokedex.png?raw=true "Pokedex")</span>
+<p align="center">
+  <img src="pokedex.png" />
+</p>
 
 ## How to run it ?
 
