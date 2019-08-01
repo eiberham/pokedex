@@ -32,7 +32,7 @@ const PokeList = ({history}) => {
         <Section style={props}>
             {[...Array(151)].map( (e,id) => (
                 <Suspense fallback={renderLoader()}>
-                    <PokeItem id={id} key={id} handleClick={handleClick}/>
+                    <PokeItem id={id.toString()} key={id.toString()} handleClick={handleClick}/>
                 </Suspense>
             ))}
         </Section>
