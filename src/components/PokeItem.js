@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import PropTypes from "prop-types";
 import pokeapi from "../apis/pokeapi";
 import styled from '@emotion/styled';
 
@@ -55,6 +56,12 @@ const PokeItem = ({id, handleClick}) => {
              {renderThumbnail(pokemon)}
         </>
     )
+};
+
+PokeItem.propTypes = {
+    id: PropTypes.number,
+    key: PropTypes.number,
+    handleClick: PropTypes.func
 };
 
 export default PokeItem;
