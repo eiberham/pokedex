@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from '@emotion/styled';
 
 const Div = styled.div `
@@ -29,6 +30,12 @@ function PokeImage({pokemon, handleClick}){
             </figure>
         </Div>
     )
+};
+
+PokeImage.propTypes = {
+    pokemon: PropTypes.object,
+    handleClick: PropTypes.func,
+    children: PropTypes.node.isRequired,
 };
 
 export default PokeImage;

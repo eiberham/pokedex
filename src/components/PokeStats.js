@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
 const Div = styled.div `
@@ -44,6 +45,10 @@ const PokeStats = ({pokemon}) => {
             </section>
         </Div>
     )
+};
+
+PokeStats.propTypes = {
+    children: PropTypes.node.isRequired
 };
 
 export default PokeStats;

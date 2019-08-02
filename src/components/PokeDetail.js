@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import pokeapi from "../apis/pokeapi";
 import styled from '@emotion/styled';

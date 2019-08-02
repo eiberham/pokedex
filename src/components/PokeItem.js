@@ -30,7 +30,8 @@ const PokeItem = ({id, handleClick}) => {
 
 PokeItem.propTypes = {
     id: PropTypes.string,
-    handleClick: PropTypes.func
+    handleClick: PropTypes.func,
+    children: PropTypes.node.isRequired,
 };
 
 export default PokeItem;
