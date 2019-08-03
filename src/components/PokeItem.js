@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import pokeapi from "../apis/pokeapi";
 import PokeImage from './PokeImage';
+import LazyLoad from "react-lazyload";
 
 const PokeItem = ({id, handleClick}) => {
     const [pokemon, setPokemon] = useState({});
@@ -23,7 +24,9 @@ const PokeItem = ({id, handleClick}) => {
     if(!pokemon) return <div>Loading ...</div>;
     return (
         <>
-             <PokeImage pokemon={pokemon} handleClick={handleClick}/>
+            <LazyLoad once height={140} overflow throttle={100}>
+                <PokeImage pokemon={pokemon} handleClick={handleClick} key={pokemon.name}/>
+            </LazyLoad>
         </>
     )
 };
