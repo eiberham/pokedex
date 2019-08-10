@@ -33,9 +33,8 @@ function PokeImage({pokemon, handleClick}){
 };
 
 PokeImage.propTypes = {
-    pokemon: PropTypes.object,
-    handleClick: PropTypes.func,
-    children: PropTypes.node.isRequired,
+    pokemon: PropTypes.object.isRequired,
+    handleClick: PropTypes.func.isRequired
 };
 
 export default PokeImage;
