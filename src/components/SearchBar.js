@@ -23,14 +23,14 @@ const SearchBar = (props) => {
 
     return (
         <Section>
-            <form onSubmit={onFormSubmit}>
+            <form data-testid="form" onSubmit={onFormSubmit}>
                 <input
                     type="text"
                     placeholder="Search a pokémon"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                 />
-                <button type="submit">Search</button>
+                <button data-testid="btn-submit" type="submit">Search</button>
             </form>
         </Section>
     )

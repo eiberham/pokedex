@@ -22,6 +22,7 @@ function PokeImage({pokemon, handleClick}){
         <Div>
             <figure>
                 <img
+                    data-testid="image"
                     src={pokemon.sprites.front_default}
                     alt={pokemon.name}
                     onClick={ () => handleClick(pokemon.name)}

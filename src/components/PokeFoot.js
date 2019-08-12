@@ -16,7 +16,7 @@ const Footer = styled.footer `
 const PokeFoot = () => {
     return (
         <Footer>
-            <span>Hooks Practice @2019</span>
+            <span data-testid="footer-text">(Hooks Practice) Abraham @2019</span>
         </Footer>
     )
 };

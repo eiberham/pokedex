@@ -4,9 +4,9 @@ import { render } from '@testing-library/react';
 
 describe('PokeFoot', () => {
 
-    test('should display copyright', () => {
-        const { getByText } = render(<PokeFoot copyright="Hooks Practice @2019" />);
-        getByText('Hooks Practice @2019')
+    test('displays text', () => {
+        const { getByText } = render(<PokeFoot />);
+        expect(getByText('(Hooks Practice) Abraham @2019')).toBeDefined()
     })
 
 });
