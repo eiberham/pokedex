@@ -6,7 +6,7 @@ describe('SearchBar', () => {
 
     test('fires the handleSearch callback', () => {
         const handleSearch = jest.fn();
-        const { container, getByTestId } = render (<SearchBar handleSearch={handleSearch} />);
+        const { getByTestId } = render (<SearchBar handleSearch={handleSearch} />);
 
         fireEvent.click(getByTestId('btn-submit'));
         expect(handleSearch).toHaveBeenCalled();
