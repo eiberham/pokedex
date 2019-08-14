@@ -29,7 +29,7 @@ const PokeList = ({history}) => {
     };
 
     return (
-        <Section style={props}>
+        <Section style={props} data-testid="list-items">
             {[...Array(151)].map( (e,id) => (
                 <Suspense fallback={renderLoader()}>
                     <PokeItem id={(id + 1).toString()} key={id.toString()} handleClick={handleClick}/>

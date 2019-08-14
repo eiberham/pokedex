@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, fireEvent, waitForElement, act } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import PokeList from '../components/PokeList';
-import { Link, Route, Router, Switch } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 describe('PokeList', () => {
 
@@ -23,7 +23,7 @@ describe('PokeList', () => {
     }
 
 
-    test('Renders a list of pokemons', async (done) => {
+    test('Renders a list of pokemons', () => {
         // Arrange
         const pokemon1 = {"sprites": {
                 "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
@@ -39,16 +39,11 @@ describe('PokeList', () => {
 
         // Act
 
-        const { container, getByTestId, debug } = renderWithRouter(<PokeList { ...props } />);
-        const figures = await waitForElement(
-            () => getByTestId('image')
-        );
-
+        const { getByTestId } = renderWithRouter(<PokeList { ...props } />);
+        const listOfPokemons = getByTestId('list-items');
         //debug();
 
-        //const figure = await waitForElement(() => container.getElementsByTagName('figure'));
-
         // Assert
-        expect(figures).toHaveLength(100)
+        expect(listOfPokemons.children).toHaveLength(151)
     })
 })
