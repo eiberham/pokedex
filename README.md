@@ -16,6 +16,16 @@ Below you can see a screenshot of the end result:
   <img src="pokedex.png" />
 </p>
 
+<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none;">
+  <tr>
+    <td><img alt="GitHub" src="https://img.shields.io/github/license/wwleak/pokedex?style=for-the-badge"></td>
+    <td><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/wwleak/pokedex?style=for-the-badge"></td>
+    <td><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wwleak/pokedex?style=for-the-badge"></td>
+    <td><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wwleak/pokedex?style=for-the-badge"></td>
+    <td><img alt="GitHub stars" src="https://img.shields.io/github/stars/wwleak/pokedex?style=for-the-badge"></td>
+  </tr>
+</table>
+
 ## How to run it ?
 
 First step, clone the repo.
