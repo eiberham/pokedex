@@ -5,25 +5,27 @@ import styled from "@emotion/styled";
 const Div = styled.div `
     display: flex;
     flex-direction: column;
-    justify-content:  space-around;
+    justify-content:  center;
     align-items: center;
     font-family: 'Lacquer', sans-serif;
     img { transform: scale(1);}
     figure {
+        margin: 0;
         display: flex;
         flex-direction:column;
         align-items: center;
         font-family: inherit;
         font-size: 2rem;
-        color: white;
+        color: black;
     }
     .details {
-        font-size: 1.5rem;
+        
+        font-size: 1.2rem;
         font-weight: 700;
         color: red;
         span { display: flex; justify-content: center;}
-        h2 {
-            font-size: 2rem;
+        h5 {
+            font-size: 1.2rem;
             color: green;
         }
     }
@@ -41,7 +43,7 @@ const PokeStats = ({pokemon}) => {
                 {pokemon.types.map(element => (
                     <span>{element.type.name}</span>
                 ))}
-                <h2>Base Experience: {pokemon.base_experience}</h2>
+                <h5>Base Experience: {pokemon.base_experience}</h5>
             </section>
         </Div>
     )

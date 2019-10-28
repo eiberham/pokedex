@@ -12,9 +12,10 @@ const Section = styled(animated.section) `
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background-color: black;
-    width: 40vw;
-    height: 60vh;
+    background-color: transparent;
+    padding-top: 85px;
+    width: 408px;
+    height: 385px;
     margin: 0 auto;
     overflow-y: scroll;
 `;

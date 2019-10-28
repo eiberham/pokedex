@@ -7,9 +7,12 @@ import PokeStats from './PokeStats';
 
 const Section = styled(animated.section) `
     margin: 0 auto;
-    width: 40vw;
-    height: 60vh;
-    background: black;
+    width: 408px;
+    height: 385px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 `;
 
 const PokeDetail = ({match}) => {

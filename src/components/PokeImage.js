@@ -6,13 +6,18 @@ const Div = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    font-family: 'Lacquer', sans-serif;
-    font-size: 0.8rem;
-    color: white;
+    font-size: 0.5rem;
+    color: black;
     text-transform: uppercase;
     &:hover {
         cursor: pointer;
+    }
+    figure {
+        margin: 0;
+        img {
+            width: 75px;
+            height: 75px;
+        }
     }
 `;
 

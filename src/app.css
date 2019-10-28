@@ -1,0 +1,10 @@
+.app {
+  text-align: center;
+  background: url("./bg.jpg") no-repeat center;
+  background-size: contain;
+  height: 80vh;
+  width: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

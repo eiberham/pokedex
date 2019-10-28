@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from './history';
+import './app.css';
 
 const PokeList  = lazy(() => import('./components/PokeList'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
 const PokeDetail = lazy(() => import('./components/PokeDetail'));
-const PokeFoot = lazy(() => import('./components/PokeFoot'));
 
 const renderLoader = () => <p>Loading</p>;
 
@@ -18,9 +18,9 @@ function App() {
   };
 
   return (
-      <div className="App">
+      <div className="app">
           <Suspense fallback={renderLoader()}>
-              <SearchBar handleSearch={handleSearch}/>
+              {/* <SearchBar handleSearch={handleSearch}/> */}
               <Router history={history}>
                   <Switch>
                       <Route exact path="/" render={ ()=>( <Redirect to="pokemon" /> )} />
@@ -28,7 +28,6 @@ function App() {
                       <Route path="/pokemon/:name" component={PokeDetail}></Route>
                   </Switch>
               </Router>
-              <PokeFoot />
           </Suspense>
       </div>
   );
