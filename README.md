@@ -1,6 +1,6 @@
 ## Pokedex.
 
-This is a pokedex built with React leveraging basic hooks functionality and the pokémon api,
+This is a pokedex built with react leveraging basic hooks functionality and the pokémon api,
 for the ui i used flexbox for positioning elements and styled components to give it some 
 color.
 
@@ -56,8 +56,6 @@ You can find all available scripts in the package.json file
 
 ## Note
 
-It was solely a practice to start learning hooks stuff, if you have some suggestion, enhancement or 
-comment, just let me now. I'm looking forward to add new functionality and try to use the rest of hooks and even create my own 
-as i learn.
+It was solely a practice to start learning hooks stuff, i'm currently refactoring the code so some described functionality might not work.
 
 
