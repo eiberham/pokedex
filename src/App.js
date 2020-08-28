@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from './history';
-import './app.css';
+import './app.scss';
 
 const PokeList  = lazy(() => import('./components/PokeList'));
 const SearchBar = lazy(() => import('./components/SearchBar'));

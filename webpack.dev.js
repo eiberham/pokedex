@@ -1,10 +1,11 @@
 const path = require("path")
-const merge = require('webpack-merge')
-const base = require('./webpack.base')
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-module.exports = merge(base, {
+module.exports = merge(common, {
+    mode: 'development',
     entry: "./src/index.js",
     output: {
         filename: "[name].bundle.js",
@@ -13,25 +14,38 @@ module.exports = merge(base, {
     },
     devtool: "source-map",
     resolve: {
-        extensions: [".js", ".jsx", ".json"]
+        extensions: [".js", ".jsx", ".json", ".scss"]
     },
     module: {
         rules: [
             {
-                test: /\.(s*).css$/,
+                test: /\.s[ac]ss$/i,
                 use: [
                     "style-loader",
-                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
-            }
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                        name: '[name].[ext]',
+                        outputPath: 'images/',
+                        publicPath: 'images/'
+                        }
+                    }
+                ]
+            },
         ]
     },
     devServer: {
+        contentBase: "./dist",
         historyApiFallback: true,
         host: "127.0.0.1",
-        port: 80,
+        port: 8080,
         compress: true,
         open: true
     },
