@@ -3,7 +3,7 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from './history';
 import './app.scss';
 
-const PokeList  = lazy(() => import('./components/PokeList'));
+const PokeList  = lazy(() => import('./components/Pokelist/PokeList'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
 const PokeDetail = lazy(() => import('./components/PokeDetail'));
 
@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-      <div className="app">
+      <div>
           <Suspense fallback={renderLoader()}>
               {/* <SearchBar handleSearch={handleSearch}/> */}
               <Router history={history}>
