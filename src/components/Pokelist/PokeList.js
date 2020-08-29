@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import {useSpring, animated} from 'react-spring';
 
 const PokeItem = lazy(() => import('../PokeItem'));
+const Header = lazy(() => import('../Header'));
 
 const renderLoader = () => <p>Loading</p>;
 
@@ -21,24 +22,13 @@ const Section = styled(animated.section) `
     overflow-y: scroll;
 `;
 
-const Header = styled.div `
-    position: relative;
-    top: 0;
-    width: 100%;
-    background: red;
-    height: 250px;
-    clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
-    z-index: 2;
-    overflow: hidden;
-`;
-
 const Wrap = styled.span `
     position: relative;
     top: 0;
     margin: 0 0 3rem 0;
     width: 100%;
     background: black;
-    height: 256px;
+    height: 356px;
     clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
     border-bottom: 6px solid black;
 `;
@@ -58,8 +48,8 @@ const PokeList = ({history}) => {
                 <Header />
             </Wrap>
             {[...Array(151)].map( (e,id) => (
-                <Suspense fallback={renderLoader()}>
-                    <PokeItem id={(id + 1).toString()} key={id.toString()} handleClick={handleClick}/>
+                <Suspense fallback={renderLoader()} key={id.toString()}>
+                    <PokeItem id={(id + 1).toString()} handleClick={handleClick}/>
                 </Suspense>
             ))}
         </Section>
