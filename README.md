@@ -1,14 +1,16 @@
 ## Pokedex.
 
 This is a pokedex built with react leveraging basic hooks functionality and the pokémon api,
-for the ui i used flexbox for positioning elements and styled components to give it some 
-color.
+for the ui i used flexbox for positioning elements and styled components to add it some 
+styling.
 
 In addition components lazy load was added through lazy and suspense.
 
 You can see a list of the 151 pokémons available in the api and search any, there's a detail
 component where you can see a picture of the pokémon and relevant stats like type and base
 experience.
+
+As a side note, webpack configurations were added.
 
 Below you can see a screenshot of the end result:
 
@@ -31,7 +33,7 @@ Below you can see a screenshot of the end result:
 First step, clone the repo.
 
 ```console
-foo@bar:~$ git clone https://github.com/wwleak/pokedex.git
+foo@bar:~$ git clone https://github.com/eiberham/pokedex.git
 ```
 
 Then run the following command within the project folder to install all the dependecies:
@@ -46,7 +48,7 @@ Afterwards run the following command:
 foo@bar:~$ npm run start
 ```
 
-Now if you go on localhost://3000 you should see it.
+Now if you go on localhost:8080/pokemon you should see it.
 
 Enjoy!
 
