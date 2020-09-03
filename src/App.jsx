@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Router, Route, HashRouter, Switch, Redirect } from 'react-router-dom';
-import history from './history';
 import './app.scss';
 
 const PokeList  = lazy(() => import('./components/Pokelist/PokeList'));
@@ -10,13 +9,6 @@ const PokeDetail = lazy(() => import('./components/PokeDetail'));
 const renderLoader = () => <p>Loading</p>;
 
 function App() {
-
-  const handleSearch = (query) => {
-      history.push({
-          pathname: `/pokemon/${query}`
-      });
-  };
-
   return (
       <div>
           <Suspense fallback={renderLoader()}>

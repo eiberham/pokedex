@@ -10,7 +10,7 @@ module.exports = merge(common, {
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         publicPath: './'
     },
     devtool: "source-map",
@@ -44,7 +44,7 @@ module.exports = merge(common, {
         ]
     },
     devServer: {
-        contentBase: "./dist",
+        contentBase: "./docs",
         historyApiFallback: true,
         host: "127.0.0.1",
         port: 80,
