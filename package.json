@@ -20,7 +20,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.dev.js --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs",
+    "deploy": "gh-pages -d dist",
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
