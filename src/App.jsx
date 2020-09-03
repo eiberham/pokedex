@@ -15,8 +15,7 @@ function App() {
               {/* <SearchBar handleSearch={handleSearch}/> */}
               <HashRouter>
                   <Switch>
-                      <Route exact path="/" render={ ()=>( <Redirect to="pokemon" /> )} />
-                      <Route path="/pokemon" exact component={PokeList}></Route>
+                      <Route path="/" exact component={PokeList}></Route>
                       <Route path="/pokemon/:name" component={PokeDetail}></Route>
                   </Switch>
               </HashRouter>
