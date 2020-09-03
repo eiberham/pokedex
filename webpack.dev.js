@@ -44,10 +44,10 @@ module.exports = merge(common, {
         ]
     },
     devServer: {
-        contentBase: "./docs",
+        contentBase: "./dist",
         historyApiFallback: true,
         host: "127.0.0.1",
-        port: 8080,
+        port: 80,
         compress: true,
         open: true
     },
