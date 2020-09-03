@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Router, Route, HashRouter, Switch, Redirect } from 'react-router-dom';
 import history from './history';
 import './app.scss';
 
@@ -21,13 +21,13 @@ function App() {
       <div>
           <Suspense fallback={renderLoader()}>
               {/* <SearchBar handleSearch={handleSearch}/> */}
-              <Router history={history}>
+              <HashRouter>
                   <Switch>
                       <Route exact path="/" render={ ()=>( <Redirect to="pokemon" /> )} />
                       <Route path="/pokemon" exact component={PokeList}></Route>
                       <Route path="/pokemon/:name" component={PokeDetail}></Route>
                   </Switch>
-              </Router>
+              </HashRouter>
           </Suspense>
       </div>
   );
