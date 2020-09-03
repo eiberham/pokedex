@@ -10,8 +10,8 @@ module.exports = merge(common, {
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'docs'),
-        publicPath: './'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/pokedex/'
     },
     devtool: "source-map",
     resolve: {
@@ -47,7 +47,7 @@ module.exports = merge(common, {
         contentBase: "./docs",
         historyApiFallback: true,
         host: "127.0.0.1",
-        port: 80,
+        port: 8080,
         compress: true,
         open: true
     },
