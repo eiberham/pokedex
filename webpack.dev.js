@@ -23,33 +23,44 @@ module.exports = merge(common, {
                 test: /\.(s*)css$/i,
                 use: [
                     "style-loader",
-                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
             },
             {
-                test: /\.(png|svg|jpe?g|gif)$/,
+                test: /\.(png|jpe?g|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                        name: '[name].[ext]',
-                        outputPath: 'images/',
-                        publicPath: 'images/'
+                            name: '[name].[ext]',
+                            outputPath: 'images/',
+                            publicPath: 'images/'
                         }
                     }
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: {
+                            limit: 10000,
+                        },
+                    },
+                ],
             },
         ]
     },
     devServer: {
         contentBase: "./dist",
+        writeToDisk: true,
         historyApiFallback: true,
         host: "127.0.0.1",
-        port: 80,
+        port: 8084,
         compress: true,
-        open: true
+        open: false
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -57,9 +68,8 @@ module.exports = merge(common, {
 			cleanOnceBeforeBuildPatterns: [],
 			cleanAfterEveryBuildPatterns: [
 				'**/*.js', 
-				'**/*.map',
-				'!assets/images', 
-				'!assets/images/**/*'
+                '**/*.map',
+                '!*.html'
 			],
 		}),
         new HtmlWebpackPlugin({
