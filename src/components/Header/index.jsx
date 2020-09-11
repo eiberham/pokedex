@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../logo.svg';
 import { useHistory } from 'react-router-dom';
-import { withRoute } from '../../hocs';
 
 const Header = styled.div `
     position: relative;
@@ -49,7 +48,7 @@ const Index = props => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        
+        history.push('/pokemon?search=' + query);
     };
 
     return (
@@ -69,4 +68,4 @@ const Index = props => {
     )
 };
 
-export default withRoute(Index)(props);
+export default Index;

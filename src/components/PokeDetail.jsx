@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import pokeapi from "../apis/pokeapi";
+import pokeapi from "../apis";
 import styled from '@emotion/styled';
 import {useSpring, animated} from 'react-spring';
 import PokeStats from './PokeStats';
@@ -19,7 +19,7 @@ const PokeDetail = ({match}) => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [pokemon, setPokemon] = useState( {});
 
-    useEffect(() => {
+    /* useEffect(() => {
         const fetchPokemon = async() => {
             let {data} = await pokeapi.get(`/pokemon/${match.params.name}`);
             setPokemon(data)
@@ -27,7 +27,7 @@ const PokeDetail = ({match}) => {
 
         fetchPokemon();
 
-    }, [match.params.name]);
+    }, [match.params.name]); */
 
     if(!pokemon) return <div>Loading ...</div>;
     return (

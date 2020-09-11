@@ -25,7 +25,7 @@ const Div = styled.div `
     }
 `;
 
-function PokeImage({pokemon, handleClick}){
+function Image({pokemon, handleClick}){
     const id = pokemon.id;
     if(!id) return null;
     return (
@@ -43,9 +43,9 @@ function PokeImage({pokemon, handleClick}){
     )
 };
 
-PokeImage.propTypes = {
+Image.propTypes = {
     pokemon: PropTypes.object.isRequired,
     handleClick: PropTypes.func.isRequired
 };
 
-export default PokeImage;
+export default Image;

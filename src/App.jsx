@@ -5,10 +5,11 @@ import { Global, css } from '@emotion/core';
 import {useSpring, animated} from 'react-spring';
 import './app.scss';
 
-const PokeList  = lazy(() => import('./components/Pokelist/PokeList'));
+const List  = lazy(() => import('./components/List'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
 const PokeDetail = lazy(() => import('./components/PokeDetail'));
 const Header = lazy(() => import('./components/Header'));
+const Main = lazy(() => import('./components/Main'));
 
 const renderLoader = () => <p>Loading</p>;
 
@@ -63,14 +64,14 @@ function App() {
             />
             <Suspense fallback={renderLoader()}>
                 <Section style={props} data-testid="list-items">
-                    <Wrap>
-                        <Header handleSearch={handleSearch} />
-                    </Wrap>
                     <HashRouter>
+                        <Wrap>
+                            <Header handleSearch={() => {}} />
+                        </Wrap>
                         <Switch>
-                            <Route path="/" exact component={PokeList}></Route>
-                            <Route path="/pokemon" component={PokeList}></Route>
-                            <Route path="/pokemon/:name" component={PokeDetail}></Route>
+                            <Route path="/" exact component={Main}></Route>
+                            <Route path="/pokemon" component={List}></Route>
+                            {/* <Route path="/pokemon/:name" component={PokeDetail}></Route> */}
                         </Switch>
                     </HashRouter>
                 </Section>
@@ -79,5 +80,5 @@ function App() {
     );
 }
 
-export default withRouter(App);
+export default App;
 

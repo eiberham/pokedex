@@ -1,5 +1,8 @@
 import React from 'react';
+import List from '../List';
 
-const Main = props => <div>Main</div>;
+const Main = props => (
+    <List />
+);
 
 export default Main;
