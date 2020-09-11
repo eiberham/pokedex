@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../logo.svg';
+import { useHistory } from 'react-router-dom';
 
 const Header = styled.div `
     position: relative;
@@ -42,13 +43,27 @@ const Button = styled.button `
 `;
 
 const Index = props => {
+    const [query, setQuery] = useState('');
+    let history = useHistory();
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        history.push('/pokemon?search=' + query);
+    };
+
     return (
         <Header>
             <img src={logo} alt="logo" />
-            <form onSubmit={() => {}}>
-                <Input type="text" placeholder="who are you looking for?" />
+            <form onSubmit={onFormSubmit}>
+                <Input 
+                    type="text" 
+                    placeholder="who are you looking for?" 
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                />
                 <Button type="submit"><FaSearch /></Button>
             </form>
+            {props.children}
         </Header>
     )
 };
