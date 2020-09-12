@@ -3,7 +3,7 @@ import {
     POKEMON_LOADING
 } from '../constants';
 
-const INITIAL_STATE = []
+const INITIAL_STATE = { items: [], loading: false};
 
 const pokemons = (state = INITIAL_STATE, action) => {
     const { payload, type } = action;
@@ -11,12 +11,12 @@ const pokemons = (state = INITIAL_STATE, action) => {
         case POKEMON_SUCCESS:
             return {
                 ...state,
-                ...payload
+                items: [...state.items, ...[{ ...payload}]]
             }
         case POKEMON_LOADING:
             return {
                 ...state,
-                loading: payload
+                ...{loading: payload}
             }
         default:
             return state;

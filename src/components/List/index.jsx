@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import queryString from 'query-string';
 import { pokemonFetch } from '../../actions';
 
-const Item = lazy(() => import('../Item'));
 
-const renderLoader = () => <p>Loading</p>;
+import Item from '../Item';
+import Loader from '../Loader';
 
-const List = ({ pokemons, pokemonFetch }) => {
+const List = ({ pokemons, loading, pokemonFetch }) => {
     const location = useLocation();
     const { search } = queryString.parse(location.search);
 
@@ -20,29 +20,44 @@ const List = ({ pokemons, pokemonFetch }) => {
     }, []);
     
 
-    const handleClick = (name) => {
-        
+    function handleClick (name) {
+        console.log(name);
     };
 
-    // if (!pokemons) return <></>;
-    console.log(pokemons)
+    if (!pokemons) return null;
     return (
         <>
-            {pokemons.length > 0 && pokemons.map( (element,id) => (
-                <Suspense fallback={renderLoader()} key={id.toString()}>
-                    <Item item={element} handleClick={handleClick}/>
-                </Suspense>
-            ))}
+            {loading ? (
+                <Loader />
+            ) : ( 
+                <React.Fragment>
+                    {pokemons.length > 0 && pokemons.map( (element, id) => (
+                        <Item key={id.toString()} item={element} handleClick={handleClick} />
+                    ))}
+                </React.Fragment>
+            )}
         </>
     )
 };
 
 List.propTypes = {
-    pokemons: PropTypes.arrayOf(PropTypes.shape).isRequired
+    pokemons: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        types: PropTypes.arrayOf(PropTypes.shape({
+            slot: PropTypes.number,
+            type: PropTypes.shape({
+                name: PropTypes.string
+            })
+        })),
+        weight: PropTypes.number,
+        base_experience: PropTypes.number
+    })).isRequired
 }
 
 const mapStateToProps = state => ({
-    pokemons: state
+    pokemons: state.pokemons.items,
+    loading: state.pokemons.loading
 });
 
 export default connect(mapStateToProps, { pokemonFetch })(List);

@@ -29,7 +29,7 @@ const PokeDetail = ({match}) => {
 
     }, [match.params.name]); */
 
-    if(!pokemon) return <div>Loading ...</div>;
+    if(!pokemon) return <></>;
     return (
         <Section style={props}>
             <><PokeStats pokemon={pokemon} /></>

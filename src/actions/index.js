@@ -6,13 +6,17 @@ import {
 } from '../constants';
 
 export const pokemonFetch = () => {
-    debugger;
-    return dispatch => {
-        //dispatch(pokemonLoading());
-        [...Array(151)].map( async number => {
-            let {data} = await pokeapi.get(`/pokeapi/${number}`)
-            dispatch(pokemonSuccess(data));
+    return (dispatch, getState) => {
+        dispatch(pokemonLoading(true));
+        [...Array(151)].map( async (el, number) => {
+            let {data} = await pokeapi.get(`/pokemon/${(number + 1)}`)
+            const { id, name, types, base_experience, weight } = data;
+
+            dispatch(pokemonSuccess({ 
+                id, name, types, base_experience, weight 
+            }));
         });
+        dispatch(pokemonLoading(false));
     } 
 }
 
