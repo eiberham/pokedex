@@ -3,13 +3,10 @@ import { Router, Route, HashRouter, Switch, Redirect, useHistory, withRouter } f
 import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
 import {useSpring, animated} from 'react-spring';
+import Header from './components/Header';
+import List from './components/List';
+import Main from './components/Main';
 import './app.scss';
-
-const List  = lazy(() => import('./components/List'));
-const SearchBar = lazy(() => import('./components/SearchBar'));
-const PokeDetail = lazy(() => import('./components/PokeDetail'));
-const Header = lazy(() => import('./components/Header'));
-const Main = lazy(() => import('./components/Main'));
 
 const renderLoader = () => <p>Loading</p>;
 
@@ -62,20 +59,18 @@ function App() {
                     .--ghost { background-color: #150E0F; }
                 `}
             />
-            <Suspense fallback={renderLoader()}>
-                <Section style={props} data-testid="list-items">
-                    <HashRouter>
-                        <Wrap>
-                            <Header handleSearch={() => {}} />
-                        </Wrap>
-                        <Switch>
-                            <Route path="/" exact component={Main}></Route>
-                            <Route path="/pokemon" component={List}></Route>
-                            {/* <Route path="/pokemon/:name" component={PokeDetail}></Route> */}
-                        </Switch>
-                    </HashRouter>
-                </Section>
-            </Suspense>
+            <Section style={props} data-testid="list-items">
+                <HashRouter>
+                    <Wrap>
+                        <Header handleSearch={() => {}} />
+                    </Wrap>
+                    <Switch>
+                        <Route path="/" exact component={Main}></Route>
+                        <Route path="/pokemon" component={List}></Route>
+                        {/* <Route path="/pokemon/:name" component={PokeDetail}></Route> */}
+                    </Switch>
+                </HashRouter>
+            </Section>
         </div>
     );
 }

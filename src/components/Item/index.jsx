@@ -6,7 +6,6 @@ import LazyLoad from "react-lazyload";
 import topograpy from '../../../topography.svg'
 
 const Item = ({item, handleClick}) => {
-
     const Div = styled.div `
         border-radius: 8px;
         margin: 1rem;
@@ -20,18 +19,24 @@ const Item = ({item, handleClick}) => {
         }
     `;
 
+    if (!item) return null;
+
+    const type = [...item.types].shift().type.name
+
     return (
-        <Div className={`--${item.types.shift().type.name}`}>
+        <Div className={`--${type}`}>
             <LazyLoad once height={140} overflow throttle={100}>
-                <Image pokemon={item} handleClick={handleClick} key={pokemon.name} />
+                <Image pokemon={item} handleClick={handleClick} key={item.name} />
             </LazyLoad>
         </Div>
     )
 };
 
 Item.propTypes = {
-    item: PropTypes.shape.isRequired,
-    handleClick: PropTypes.func.isRequired,
+    item: PropTypes.shape({
+        name: PropTypes.string,
+    }).isRequired,
+    handleClick: PropTypes.func.isRequired
 };
 
 export default Item;

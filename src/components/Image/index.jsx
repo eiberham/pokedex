@@ -44,7 +44,9 @@ function Image({pokemon, handleClick}){
 };
 
 Image.propTypes = {
-    pokemon: PropTypes.object.isRequired,
+    pokemon: PropTypes.shape({
+        name: PropTypes.string
+    }).isRequired,
     handleClick: PropTypes.func.isRequired
 };
 
