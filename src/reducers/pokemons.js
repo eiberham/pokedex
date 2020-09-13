@@ -1,22 +1,27 @@
 import {
-    POKEMON_SUCCESS,
-    POKEMON_LOADING
+    POKEMON_FETCH_SUCCESS,
+    POKEMON_SEARCH_SUCCESS
 } from '../constants';
 
-const INITIAL_STATE = { items: [], loading: true, search: []};
+const INITIAL_STATE = { items: [], search: ''};
 
 const pokemons = (state = INITIAL_STATE, action) => {
     const { payload, type } = action;
     switch(type) {
-        case POKEMON_SUCCESS:
+        case POKEMON_FETCH_SUCCESS:
             return {
                 ...state,
-                items: [...state.items, ...[{ ...payload}]]
+                items: [
+                    ...new Set([
+                        ...state.items, 
+                        ...[{ ...payload}]
+                    ])
+                ]
             }
-        case POKEMON_LOADING:
+        case POKEMON_SEARCH_SUCCESS:
             return {
                 ...state,
-                ...{loading: payload}
+                search: payload
             }
         default:
             return state;

@@ -1,36 +1,36 @@
 import pokeapi from '../apis';
 import {
-    POKEMON_SUCCESS,
-    POKEMON_LOADING,
-    POKEMON_SEARCH
+    POKEMON_FETCH_SUCCESS,
+    POKEMON_SEARCH_SUCCESS
 } from '../constants';
 
-export const pokemonFetch = () => {
+export const pokemonFetchRequest = () => {
     return (dispatch, getState) => {
-        // dispatch(pokemonLoading(true));
         [...Array(151)].map( async (el, number) => {
             let {data} = await pokeapi.get(`/pokemon/${(number + 1)}`)
             const { id, name, types, base_experience, weight } = data;
 
-            dispatch(pokemonSuccess({ 
+            dispatch(pokemonFetchSuccess({ 
                 id, name, types, base_experience, weight 
             }));
         });
-        // dispatch(pokemonLoading(false));
     } 
 }
 
-export const pokemonSearch = word => ({
-    type: POKEMON_SEARCH,
-    payload: word
-})
-
-export const pokemonSuccess = data => ({
-    type: POKEMON_SUCCESS,
+export const pokemonFetchSuccess = data => ({
+    type: POKEMON_FETCH_SUCCESS,
     payload: data
 });
 
-export const pokemonLoading = loading => ({
-    type: POKEMON_LOADING,
-    payload: loading
-})
+export const pokemonSearchRequest = word => {
+    return (dispatch, getState) => {
+        dispatch(pokemonSearchSuccess(word))
+    }
+}
+
+export const pokemonSearchSuccess = data => {
+    return {
+        type: POKEMON_SEARCH_SUCCESS,
+        payload: data
+    }
+}
