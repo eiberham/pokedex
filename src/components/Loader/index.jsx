@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import { ImSpinner4 } from 'react-icons/im';
+
+const spin = keyframes`
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+`
 
 const Div = styled.div`
     margin: 0;
@@ -12,7 +18,7 @@ const Div = styled.div`
 
 const Loader = () => {
     return (
-        <Div>
+        <Div css={css`animation: ${spin} .8s linear infinite;`}>
             <ImSpinner4 size={80} color="green" />
         </Div>
     )
