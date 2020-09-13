@@ -1,10 +1,9 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from 'prop-types';
-import { withRouter, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 import { pokemonFetch } from '../../actions';
-
 
 import Item from '../Item';
 import Loader from '../Loader';
@@ -12,6 +11,8 @@ import Loader from '../Loader';
 const List = ({ pokemons, loading, pokemonFetch }) => {
     const location = useLocation();
     const { search } = queryString.parse(location.search);
+
+    console.log("#### LOADING: ", loading);
 
     useEffect(() => {
         // call action creator here
@@ -24,10 +25,9 @@ const List = ({ pokemons, loading, pokemonFetch }) => {
         console.log(name);
     };
 
-    if (!pokemons) return null;
     return (
         <>
-            {loading ? (
+            {loading && !pokemons.length ? (
                 <Loader />
             ) : ( 
                 <React.Fragment>

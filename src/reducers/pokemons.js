@@ -3,7 +3,7 @@ import {
     POKEMON_LOADING
 } from '../constants';
 
-const INITIAL_STATE = { items: [], loading: false};
+const INITIAL_STATE = { items: [], loading: true, search: []};
 
 const pokemons = (state = INITIAL_STATE, action) => {
     const { payload, type } = action;

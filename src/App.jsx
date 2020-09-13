@@ -13,7 +13,7 @@ const renderLoader = () => <p>Loading</p>;
 const Section = styled(animated.section) `
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     background-color: white;
     padding-top: 0px;
@@ -33,10 +33,14 @@ const Wrap = styled.span `
     height: 356px;
     clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
     border-bottom: 6px solid black;
+    @media (max-width: 375px) {
+        clip-path: none;
+        height: 256px;
+    }
 `;
 
 function App() {
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    // const props = useSpring({opacity: 1, from: {opacity: 0}});
 
     return (
         <div>
@@ -59,7 +63,7 @@ function App() {
                     .--ghost { background-color: #150E0F; }
                 `}
             />
-            <Section style={props} data-testid="list-items">
+            <Section data-testid="list-items">{/* style={props} */}
                 <HashRouter>
                     <Wrap>
                         <Header handleSearch={() => {}} />

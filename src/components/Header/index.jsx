@@ -17,6 +17,10 @@ const Header = styled.div `
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
+    @media (max-width: 375px) {
+        clip-path: none;
+        height: 250px;
+    }
 `;
 
 const Input = styled.input `
