@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../logo.svg';
-import { useHistory } from 'react-router-dom';
+import { pokemonSearchRequest } from '../../actions';
 
 const Header = styled.div `
     position: relative;
@@ -47,12 +48,12 @@ const Button = styled.button `
 `;
 
 const Index = props => {
+    const { pokemonSearchRequest } = props;
     const [query, setQuery] = useState('');
-    let history = useHistory();
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        history.push('/pokemon?search=' + query);
+        pokemonSearchRequest(query);
     };
 
     return (
@@ -72,4 +73,4 @@ const Index = props => {
     )
 };
 
-export default Index;
+export default connect(null, {pokemonSearchRequest})(Index);

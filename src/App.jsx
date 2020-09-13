@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from 'react';
-import { Router, Route, HashRouter, Switch, Redirect, useHistory, withRouter } from 'react-router-dom';
+import React from 'react';
+import { Route, HashRouter, Switch } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
 import {useSpring, animated} from 'react-spring';
@@ -7,8 +7,6 @@ import Header from './components/Header';
 import List from './components/List';
 import Main from './components/Main';
 import './app.scss';
-
-const renderLoader = () => <p>Loading</p>;
 
 const Section = styled(animated.section) `
     display: flex;
@@ -63,15 +61,13 @@ function App() {
                     .--ghost { background-color: #150E0F; }
                 `}
             />
-            <Section data-testid="list-items">{/* style={props} */}
+            <Section data-testid="list-items">
                 <HashRouter>
                     <Wrap>
                         <Header handleSearch={() => {}} />
                     </Wrap>
                     <Switch>
-                        <Route path="/" exact component={Main}></Route>
-                        <Route path="/pokemon" component={List}></Route>
-                        {/* <Route path="/pokemon/:name" component={PokeDetail}></Route> */}
+                        <Route path="/" component={List}></Route>
                     </Switch>
                 </HashRouter>
             </Section>
