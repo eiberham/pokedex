@@ -18,9 +18,14 @@ const Div = styled.div `
         img {
             position: absolute;
             right: -.5rem;
-            top: -2.5rem;
+            top: -0.5rem;
             width: 125px;
-            height: 125px;
+            height: 110px;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
 `;
@@ -36,9 +41,11 @@ function Image({pokemon, handleClick}){
                     src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`}
                     alt={pokemon.name}
                     onClick={ () => handleClick(pokemon.name)}
+                    loading="lazy"
                 />
                 <figcaption>{pokemon.name}</figcaption>
             </figure>
+            {pokemon.types.map(type => {})}
         </Div>
     )
 };
