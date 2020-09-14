@@ -5,7 +5,6 @@ import { Global, css } from '@emotion/core';
 import {useSpring, animated} from 'react-spring';
 import Header from './components/Header';
 import List from './components/List';
-import Main from './components/Main';
 import './app.scss';
 
 const Section = styled(animated.section) `
@@ -31,7 +30,7 @@ const Wrap = styled.span `
     height: 356px;
     clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
     border-bottom: 6px solid black;
-    @media (max-width: 375px) {
+    @media (max-width: 411px) {
         clip-path: none;
         height: 256px;
     }

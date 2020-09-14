@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../logo.svg';
@@ -18,7 +18,7 @@ const Header = styled.div `
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
-    @media (max-width: 375px) {
+    @media (max-width: 411px) {
         clip-path: none;
         height: 250px;
     }
@@ -48,12 +48,12 @@ const Button = styled.button `
 `;
 
 const Index = props => {
-    const { pokemonSearchRequest } = props;
+    const dispatch = useDispatch();
     const [query, setQuery] = useState('');
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        pokemonSearchRequest(query);
+        dispatch(pokemonSearchRequest(query));
     };
 
     return (
@@ -73,4 +73,4 @@ const Index = props => {
     )
 };
 
-export default connect(null, {pokemonSearchRequest})(Index);
+export default Index;

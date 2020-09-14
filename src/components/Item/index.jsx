@@ -14,6 +14,10 @@ const Item = ({item, handleClick}) => {
         background-color: ${props => props.color ? 'gray': 'orange'}
         box-shadow: -4px 33px 26px -27px orange;
         background-image: url('./images/topography.svg');
+        background-position: 0 0;
+        background-size: 40%;
+        transition: all .3s ease;
+        box-shadow: -3px 0px 10px -1px black;
         @media (max-width: 1024px) {
             min-width: 90%;
         }
