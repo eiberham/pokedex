@@ -11,7 +11,7 @@ const Header = styled.div `
     width: 100%;
     background: red;
     height: 350px;
-    clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 79%, 71% 90%, 41% 75%, 25% 88%, 0 92%, 0% 43%, 0 0);
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -53,8 +53,12 @@ const Index = props => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        dispatch(pokemonSearchRequest(query));
+        // dispatch(pokemonSearchRequest(query));
     };
+
+    const onChange = (e) => {
+        dispatch(pokemonSearchRequest(e.target.value));
+    }
 
     return (
         <Header>
@@ -63,8 +67,7 @@ const Index = props => {
                 <Input 
                     type="text" 
                     placeholder="who are you looking for?" 
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={onChange}
                 />
                 <Button type="submit"><FaSearch /></Button>
             </form>

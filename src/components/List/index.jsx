@@ -25,7 +25,8 @@ const List = () => {
             ) : ( 
                 <React.Fragment>
                     {items.length > 0 && items.filter(item => 
-                        item.name.includes(search.toLowerCase())).map( (element, id) => (
+                        item.name.includes(search.toLowerCase()))
+                            .sort(() => Math.random() - 0.5).map( (element, id) => (
                             <Item key={id.toString()} item={element} handleClick={handleClick} />
                     ))}
                 </React.Fragment>

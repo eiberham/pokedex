@@ -45,7 +45,9 @@ function Image({pokemon, handleClick}){
                 />
                 <figcaption>{pokemon.name}</figcaption>
             </figure>
-            {pokemon.types.map(type => {})}
+            {pokemon.types.map(element => {
+                <div className={`type type--${element.type.name}`}>{element.type.name}</div>
+            })}
         </Div>
     )
 };

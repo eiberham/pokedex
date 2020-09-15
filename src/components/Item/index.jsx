@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import PropTypes from "prop-types";
 import Image from '../Image';
 import LazyLoad from "react-lazyload";
-import topograpy from '../../../topography.svg'
+import topography from '../../../topography.svg'
 
 const Item = ({item, handleClick}) => {
     const Div = styled.div `
@@ -13,7 +13,7 @@ const Item = ({item, handleClick}) => {
         min-height: 15%;
         background-color: ${props => props.color ? 'gray': 'orange'}
         box-shadow: -4px 33px 26px -27px orange;
-        background-image: url('./images/topography.svg');
+        background-image: url('${topography}');
         background-position: 0 0;
         background-size: 40%;
         transition: all .3s ease;

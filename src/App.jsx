@@ -28,7 +28,7 @@ const Wrap = styled.span `
     width: 100%;
     background: black;
     height: 356px;
-    clip-path: polygon(50% 0%, 100% 0, 100% 26%, 100% 64%, 65% 64%, 38% 100%, 0 100%, 0% 43%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 79%, 71% 90%, 41% 75%, 25% 88%, 0 92%, 0% 43%, 0 0);
     border-bottom: 6px solid black;
     @media (max-width: 411px) {
         clip-path: none;
