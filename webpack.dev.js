@@ -27,19 +27,20 @@ module.exports = merge(common, {
                     "sass-loader"
                 ]
             },
-            {
+            /* {
                 test: /\.(png|jpe?g|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
+                            context: './images',
                             name: '[name].[ext]',
-                            outputPath: 'images/',
-                            publicPath: 'images/'
+                            outputPath: './images',
+                            publicPath: './images'
                         }
                     }
                 ]
-            },
+            }, */
             {
                 test: /\.svg$/,
                 use: [
@@ -73,9 +74,10 @@ module.exports = merge(common, {
 			],
 		}),
         new HtmlWebpackPlugin({
-            hash: false,
+            hash: true,
             filename: 'index.html',
-            template: './src/index.html'
+            template: 'public/index.html',
+            favicon: 'public/favicon.ico'
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css'
