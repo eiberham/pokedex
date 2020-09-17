@@ -30,9 +30,16 @@ const Div = styled.div `
     }
 `;
 
+const Types = styled.div `
+    display: flex;
+    justify-content: space-around;
+    max-width: 50%;
+`;
+
 function Image({pokemon, handleClick}){
     const id = pokemon.id;
     if(!id) return null;
+
     return (
         <Div>
             <figure>
@@ -45,9 +52,11 @@ function Image({pokemon, handleClick}){
                 />
                 <figcaption>{pokemon.name}</figcaption>
             </figure>
-            {pokemon.types.map(element => {
-                <div className={`type type--${element.type.name}`}>{element.type.name}</div>
-            })}
+            <Types>
+                {pokemon.types.map(element => (
+                    <div key={element.type.name} className={`type type--${element.type.name}`}>{element.type.name}</div>
+                ))}
+            </Types>
         </Div>
     )
 };
