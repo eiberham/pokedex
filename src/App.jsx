@@ -58,6 +58,32 @@ function App() {
                     .--fighting { background-color: #CF3E69; }
                     .--dragon { background-color: #0c68bf; }
                     .--ghost { background-color: #150E0F; }
+
+                    .type {
+                        font-size: 0.6rem;
+                        background-color: white;
+                        min-width: 7em;
+                        padding: 0.8rem;
+                        text-align: center;
+                        color: white;
+                        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+
+                        &--grass { color: #62b759; }
+                        &--water { color: #637EA6; }
+                        &--fire { color: #E37F6E; }
+                        &--bug { color: #C8B57D; }
+                        &--normal { color: #919AA3; }
+                        &--poison { color: #AC6ACA; }
+                        &--electric { color: #F6D857; }
+                        &--ground { color: #db7745; }
+                        &--fairy { color: #F9D0D3; }
+                        &--psychic { color: #77645F; }
+                        &--ice { color: #7FCFEA; }
+                        &--rock { color: #5B5A61; }
+                        &--fighting { color: #CF3E69; }
+                        &--dragon { color: #0c68bf; }
+                        &--ghost { color: #150E0F; }
+                    }
                 `}
             />
             <Section data-testid="list-items">
