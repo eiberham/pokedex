@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
 import { FaSearch } from 'react-icons/fa';
@@ -56,8 +56,17 @@ const Index = props => {
         // dispatch(pokemonSearchRequest(query));
     };
 
+    const timeout = useRef();
+
+    const debounce = (fn, delay) => {
+        clearTimeout(timeout.current);
+        timeout.current = setTimeout(fn, delay);
+    }
+
     const onChange = (e) => {
-        dispatch(pokemonSearchRequest(e.target.value));
+        debounce(() => 
+            dispatch(pokemonSearchRequest(e.target.value))
+        , 500);
     }
 
     return (
