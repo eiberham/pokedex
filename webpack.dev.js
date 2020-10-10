@@ -4,6 +4,8 @@ const common = require('./webpack.common')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const TerserJSPlugin = require("terser-webpack-plugin")
 
 module.exports = merge(common, {
     entry: "./src/index.jsx",
@@ -12,6 +14,12 @@ module.exports = merge(common, {
         chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: './'
+    },
+    optimization: {
+        minimizer: [
+            new TerserJSPlugin({}),
+            new OptimizeCSSAssetsPlugin({})
+        ]
     },
     devtool: "source-map",
     resolve: {
@@ -22,25 +30,11 @@ module.exports = merge(common, {
             {
                 test: /\.(s*)css$/i,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
             },
-            /* {
-                test: /\.(png|jpe?g|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            context: './images',
-                            name: '[name].[ext]',
-                            outputPath: './images',
-                            publicPath: './images'
-                        }
-                    }
-                ]
-            }, */
             {
                 test: /\.svg$/,
                 use: [
