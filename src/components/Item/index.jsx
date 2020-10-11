@@ -5,7 +5,7 @@ import Image from '../Image';
 import LazyLoad from "react-lazyload";
 import topography from '../../../topography.svg'
 
-const Item = ({item, handleClick}) => {
+const Item = ({item}) => {
     const Div = styled.div `
         border-radius: 8px;
         margin: 1rem;
@@ -30,7 +30,7 @@ const Item = ({item, handleClick}) => {
     return (
         <Div className={`--${type}`}>
             <LazyLoad once height={140} overflow throttle={100}>
-                <Image pokemon={item} handleClick={handleClick} key={item.name} />
+                <Image pokemon={item} key={item.name} />
             </LazyLoad>
         </Div>
     )
