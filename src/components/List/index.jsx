@@ -14,10 +14,6 @@ const List = () => {
         return () => {}
     }, []);
 
-    function handleClick (name) {
-        console.log(name);
-    };
-
     return (
         <>
             {!items.length ? (
@@ -27,7 +23,7 @@ const List = () => {
                     {items.length > 0 && items.filter(item => 
                         item.name.includes(search.toLowerCase()))
                             .sort(() => Math.random() - 0.5).map( (element, id) => (
-                            <Item key={id.toString()} item={element} handleClick={handleClick} />
+                            <Item key={id.toString()} item={element} />
                     ))}
                 </React.Fragment>
             )}
