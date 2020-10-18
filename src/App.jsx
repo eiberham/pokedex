@@ -43,21 +43,21 @@ function App() {
         <div>
             <Global
                 styles={css`
-                    .--grass { background-color: #62b759; }
-                    .--fire { background-color: #E37F6E; }
-                    .--water { background-color: #637EA6; }
-                    .--bug { background-color: #C8B57D; }
-                    .--normal { background-color: #919AA3; }
-                    .--poison { background-color: #AC6ACA; }
-                    .--electric { background-color: #F6D857; }
-                    .--ground { background-color: #db7745; }
-                    .--fairy { background-color: #F9D0D3; }
-                    .--psychic { background-color: #77645F; }
-                    .--ice { background-color: #7FCFEA; }
-                    .--rock { background-color: #5B5A61; }
-                    .--fighting { background-color: #CF3E69; }
-                    .--dragon { background-color: #0c68bf; }
-                    .--ghost { background-color: #150E0F; }
+                    .--grass { background-color: #62b759; box-shadow: -4px 33px 26px -27px #62b759; }
+                    .--fire { background-color: #E37F6E; box-shadow: -4px 33px 26px -27px #E37F6E; }
+                    .--water { background-color: #637EA6; box-shadow: -4px 33px 26px -27px #637EA6; }
+                    .--bug { background-color: #C8B57D; box-shadow: -4px 33px 26px -27px #C8B57D; }
+                    .--normal { background-color: #919AA3; box-shadow: -4px 33px 26px -27px #919AA3; }
+                    .--poison { background-color: #AC6ACA; box-shadow: -4px 33px 26px -27px #AC6ACA; }
+                    .--electric { background-color: #F6D857; box-shadow: -4px 33px 26px -27px #F6D857; }
+                    .--ground { background-color: #db7745; box-shadow: -4px 33px 26px -27px #db7745; }
+                    .--fairy { background-color: #F9D0D3; box-shadow: -4px 33px 26px -27px #F9D0D3; }
+                    .--psychic { background-color: #77645F; box-shadow: -4px 33px 26px -27px #7FCFEA; }
+                    .--ice { background-color: #7FCFEA; box-shadow: -4px 33px 26px -27px #62b759; }
+                    .--rock { background-color: #5B5A61; box-shadow: -4px 33px 26px -27px #5B5A61; }
+                    .--fighting { background-color: #CF3E69; box-shadow: -4px 33px 26px -27px #CF3E69; }
+                    .--dragon { background-color: #0c68bf; box-shadow: -4px 33px 26px -27px #0c68bf; }
+                    .--ghost { background-color: #150E0F; box-shadow: -4px 33px 26px -27px #150E0F; }
 
                     .type {
                         font-size: 0.6rem;
