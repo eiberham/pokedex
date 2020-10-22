@@ -41,7 +41,7 @@ const Scene = styled.div `
         }
           
         .card__face--back {
-            background-color: blue;
+            //background-color: blue;
             transform: rotateY( 180deg );
             z-index: 0;
         }
@@ -57,8 +57,9 @@ const Scene = styled.div `
         }
 
         .card__face--back {
+            //transform-style: preserve-3d
             transform: rotateY(360deg);
-            background-color: blue;
+            //background-color: blue;
             z-index:10;
         }
     }
