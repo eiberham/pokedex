@@ -62,6 +62,7 @@ module.exports = merge(common, {
 			verbose: true,
 			cleanOnceBeforeBuildPatterns: [],
 			cleanAfterEveryBuildPatterns: [
+                '**/*.css',
 				'**/*.js', 
                 '**/*.map',
                 '!*.html'
