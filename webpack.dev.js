@@ -10,8 +10,8 @@ const TerserJSPlugin = require("terser-webpack-plugin")
 module.exports = merge(common, {
     entry: "./src/index.jsx",
     output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        filename: '[name].[contenthash].bundle.js',
+        chunkFilename: '[name].[contenthash].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: './'
     },
@@ -74,7 +74,7 @@ module.exports = merge(common, {
             favicon: 'public/favicon.ico'
         }),
         new MiniCssExtractPlugin({
-            filename: 'styles.css'
+            filename: 'styles.[contenthash].css'
         }),
     ]
 })
