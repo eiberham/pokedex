@@ -7,6 +7,9 @@ import Header from './components/Header';
 import List from './components/List';
 import './app.scss';
 
+import bug from './assets/img/bug.svg';
+import fire from './assets/img/fire.svg';
+
 const Section = styled(animated.section) `
     display: flex;
     justify-content: space-around;
@@ -60,18 +63,25 @@ function App() {
                     .--ghost { background-color: #150E0F; box-shadow: -4px 33px 26px -27px #150E0F; }
 
                     .type {
-                        font-size: 0.6rem;
-                        background-color: white;
-                        min-width: 7em;
-                        padding: 0.8rem;
-                        text-align: center;
-                        color: white;
-                        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+                        position: absolute;
+                        top: 0;
+                        width: 150px;
+                        height: 150px;
 
                         &--grass { color: #62b759; }
                         &--water { color: #637EA6; }
-                        &--fire { color: #E37F6E; }
-                        &--bug { color: #C8B57D; }
+                        &--fire { 
+                            background-image: url('${fire}');
+                            background-position: 0 0;
+                            background-size: 40%;
+                            background-repeat: no-repeat;
+                        }
+                        &--bug { 
+                            background-image: url('${bug}');
+                            background-position: 0 0;
+                            background-size: 40%;
+                            background-repeat: no-repeat;
+                        }
                         &--normal { color: #919AA3; }
                         &--poison { color: #AC6ACA; }
                         &--electric { color: #F6D857; }
