@@ -6,10 +6,11 @@ import LazyLoad from "react-lazyload";
 import topography from '../../../topography.svg'
 
 const Scene = styled.div `
-    background-color: transparent;
-    perspective: 600px;
+    perspective: 1000px;
     min-width: 30%;
     min-height: 15%;
+    width: 320px;
+	height: 100px;
     margin: 1rem;
 
     @media (max-width: 1024px) {
@@ -17,51 +18,42 @@ const Scene = styled.div `
     }
 
     .card {
-        position: absolute;
-        transition: transform 1s;
+        position: relative;
+        transition: 0.6s;
         transform-style: preserve-3d;
         border-radius: 8px;
-        min-width: 100%;
-        min-height: 100%;
+        min-width: 100px;
+        min-height: 100px;
         transition: all .3s ease;
 
         .card__face--front, .card__face--back {
+            backface-visibility: hidden;
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
-            backface-visibility: hidden;
         }
     
         .card__face--front {
             background-image: url('${topography}');
             background-position: 0 0;
             background-size: 40%;
+            transform: rotateY(0deg);
+            z-index: 2;
         }
           
         .card__face--back {
-            //background-color: blue;
-            transform: rotateY( 180deg );
-            z-index: 0;
+            transform: rotateY( -180deg );
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
     }
 
     .card.is-flipped {
         transform: rotateY(180deg);
-
-        .card__face--front {
-            //transform: rotateY(180deg);
-            z-index:0;
-        }
-
-        .card__face--back {
-            //transform-style: preserve-3d
-            transform: rotateY(360deg);
-            //background-color: blue;
-            z-index:10;
-        }
     }
 `;
 
@@ -84,7 +76,11 @@ const Item = ({item}) => {
                         <Image pokemon={item} key={item.name} />
                     </LazyLoad>
                 </div>
-                <div className="card__face--back">back</div>
+                <div className="card__face--back">
+                    {item.types.map(el => (
+                        <div className={`type type--${el.type.name}`} />
+                    ))}
+                </div>
             </div>
         </Scene>
     )
