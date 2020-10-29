@@ -7,8 +7,14 @@ import Header from './components/Header';
 import List from './components/List';
 import './app.scss';
 
+import poison from './assets/img/poison.svg';
 import bug from './assets/img/bug.svg';
+import ground from './assets/img/ground.svg';
 import fire from './assets/img/fire.svg';
+import grass from './assets/img/grass.svg';
+import rock from './assets/img/rock.svg';
+import ghost from './assets/img/ghost.svg';
+import flying from './assets/img/flying.svg';
 
 const Section = styled(animated.section) `
     display: flex;
@@ -63,36 +69,60 @@ function App() {
                     .--ghost { background-color: #150E0F; box-shadow: -4px 33px 26px -27px #150E0F; }
 
                     .type {
-                        position: absolute;
+                        position: fixed;
                         top: 0;
                         width: 150px;
-                        height: 150px;
+                        height: 100%;
 
-                        &--grass { color: #62b759; }
-                        &--water { color: #637EA6; }
+                        &--grass { 
+                            background-image: url('${grass}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                        &--water { 
+                        }
                         &--fire { 
                             background-image: url('${fire}');
-                            background-position: 0 0;
-                            background-size: 40%;
+                            background-position: center;
                             background-repeat: no-repeat;
                         }
                         &--bug { 
                             background-image: url('${bug}');
-                            background-position: 0 0;
-                            background-size: 40%;
+                            background-position: center;
                             background-repeat: no-repeat;
                         }
                         &--normal { color: #919AA3; }
-                        &--poison { color: #AC6ACA; }
+                        &--poison { 
+                            background-image: url('${poison}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                         &--electric { color: #F6D857; }
-                        &--ground { color: #db7745; }
+                        &--ground { 
+                            background-image: url('${ground}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                         &--fairy { color: #F9D0D3; }
                         &--psychic { color: #77645F; }
                         &--ice { color: #7FCFEA; }
-                        &--rock { color: #5B5A61; }
+                        &--rock { 
+                            background-image: url('${rock}');
+                            background-position: center;
+                            background-repeat: no-repeat;    
+                        }
                         &--fighting { color: #CF3E69; }
                         &--dragon { color: #0c68bf; }
-                        &--ghost { color: #150E0F; }
+                        &--ghost { 
+                            background-image: url('${ghost}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                        &--flying {
+                            background-image: url('${flying}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                     }
                 `}
             />
