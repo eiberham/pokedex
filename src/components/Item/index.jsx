@@ -77,9 +77,7 @@ const Item = ({item}) => {
                     </LazyLoad>
                 </div>
                 <div className="card__face--back">
-                    {item.types.map(el => (
-                        <div className={`type type--${el.type.name}`} />
-                    ))}
+                    <div className={`type type--${type}`} />
                 </div>
             </div>
         </Scene>

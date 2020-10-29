@@ -13,8 +13,13 @@ import ground from './assets/img/ground.svg';
 import fire from './assets/img/fire.svg';
 import grass from './assets/img/grass.svg';
 import rock from './assets/img/rock.svg';
+import electric from './assets/img/electric.svg';
 import ghost from './assets/img/ghost.svg';
 import flying from './assets/img/flying.svg';
+import water from './assets/img/water.svg';
+import fighting from './assets/img/fighting.svg';
+import fairy from './assets/img/fairy.svg';
+import psychic from './assets/img/psychic.svg';
 
 const Section = styled(animated.section) `
     display: flex;
@@ -80,6 +85,9 @@ function App() {
                             background-repeat: no-repeat;
                         }
                         &--water { 
+                            background-image: url('${water}');
+                            background-position: center;
+                            background-repeat: no-repeat;
                         }
                         &--fire { 
                             background-image: url('${fire}');
@@ -97,21 +105,37 @@ function App() {
                             background-position: center;
                             background-repeat: no-repeat;
                         }
-                        &--electric { color: #F6D857; }
+                        &--electric { 
+                            background-image: url('${electric}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                         &--ground { 
                             background-image: url('${ground}');
                             background-position: center;
                             background-repeat: no-repeat;
                         }
-                        &--fairy { color: #F9D0D3; }
-                        &--psychic { color: #77645F; }
+                        &--fairy {
+                            background-image: url('${fairy}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                        &--psychic {
+                            background-image: url('${psychic}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                         &--ice { color: #7FCFEA; }
                         &--rock { 
                             background-image: url('${rock}');
                             background-position: center;
                             background-repeat: no-repeat;    
                         }
-                        &--fighting { color: #CF3E69; }
+                        &--fighting {
+                            background-image: url('${fighting}');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                         &--dragon { color: #0c68bf; }
                         &--ghost { 
                             background-image: url('${ghost}');
