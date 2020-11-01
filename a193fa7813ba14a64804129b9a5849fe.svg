@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="Livello_1"
+    enable-background="new 0 0 595.28 841.89"
+    xml:space="preserve"
+    viewBox="0 0 595.28 841.89"
+    version="1.1"
+    y="0px"
+    x="0px"
+  >
+<path
+      d="m100.39 315.13c1.38 0 2.739 0.043 4.102 0.113-0.483-5.182-0.758-10.424-0.758-15.728 0-93.619 75.905-169.52 169.53-169.52 69.304 0 128.86 41.61 155.14 101.2 4.528-0.522 9.118-0.818 13.781-0.818 65.907 0 119.34 53.428 119.34 119.34 0 65.907-53.433 119.34-119.34 119.34h-341.79c-42.503 0-76.959-34.452-76.959-76.95-0.003-42.52 34.453-76.97 76.959-76.97z"
+      fill="#7EC0E1"
+  />
+<defs
+    >
+	<filter
+        id="Adobe_OpacityMaskFilter"
+        height="161.7"
+        width="247.98"
+        y="141.99"
+        x="149.26"
+        filterUnits="userSpaceOnUse"
+      >
+		<feFlood
+          style="flood-color:white"
+          result="back"
+      />
+		<feBlend
+          mode="normal"
+          in2="back"
+          in="SourceGraphic"
+      />
+	</filter
+    >
+</defs
+  >
+<mask
+      id="SVGID_1_"
+      height="161.704"
+      width="247.98"
+      y="141.992"
+      x="149.265"
+      maskUnits="userSpaceOnUse"
+    >
+	<g
+        filter="url(#Adobe_OpacityMaskFilter)"
+      >
+		<defs
+        >
+			<filter
+            id="Adobe_OpacityMaskFilter_1_"
+            height="161.7"
+            width="247.98"
+            y="141.99"
+            x="149.26"
+            filterUnits="userSpaceOnUse"
+          >
+				<feFlood
+              style="flood-color:white"
+              result="back"
+          />
+				<feBlend
+              mode="normal"
+              in2="back"
+              in="SourceGraphic"
+          />
+			</filter
+        >
+		</defs
+      >
+		<mask
+          id="SVGID_1_"
+          height="161.704"
+          width="247.98"
+          y="141.992"
+          x="149.265"
+          maskUnits="userSpaceOnUse"
+        >
+		</mask
+      >
+			<linearGradient
+          id="SVGID_2_"
+          y2="141.99"
+          gradientUnits="userSpaceOnUse"
+          x2="523.12"
+          gradientTransform="matrix(-1 0 0 1 796.37 0)"
+          y1="303.7"
+          x1="523.12"
+        >
+			<stop
+            style="stop-color:#000000"
+            offset="0"
+        />
+			<stop
+            style="stop-color:#808080"
+            offset="1"
+        />
+		</linearGradient
+      >
+		<path
+          mask="url(#SVGID_1_)"
+          d="m149.26 222.84c0 44.649 55.518 80.852 124 80.852 68.472 0 123.99-36.202 123.99-80.852s-55.514-80.852-123.99-80.852c-68.48 0-124 36.2-124 80.85z"
+          fill="url(#SVGID_2_)"
+      />
+	</g
+    >
+</mask
+  >
+<linearGradient
+      id="SVGID_3_"
+      y2="141.99"
+      gradientUnits="userSpaceOnUse"
+      x2="523.12"
+      gradientTransform="matrix(-1 0 0 1 796.37 0)"
+      y1="303.7"
+      x1="523.12"
+    >
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.41"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.45"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      d="m149.26 222.84c0 44.649 55.518 80.852 124 80.852 68.472 0 123.99-36.202 123.99-80.852s-55.514-80.852-123.99-80.852c-68.48 0-124 36.2-124 80.85z"
+      fill="url(#SVGID_3_)"
+  />
+<linearGradient
+      id="SVGID_4_"
+      y2="322.7"
+      gradientUnits="userSpaceOnUse"
+      x2="503.9"
+      gradientTransform="matrix(-1 0 0 1 796.37 0)"
+      y1="468.6"
+      x1="503.9"
+    >
+	<stop
+        style="stop-color:#81C1E1"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#0089A9"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      d="m100.39 437.94c28.643 0 53.606-15.649 66.861-38.858 14.914 29.949 49.771 50.954 90.396 50.954 49.827 0 90.949-31.604 97.271-72.543 21.79 23.356 52.806 37.97 87.267 37.97 56.768 0 104.25-39.651 116.33-92.765 1.941 8.552 3.004 17.435 3.004 26.579 0 65.899-53.433 119.33-119.34 119.33h-341.79c-42.503 0-76.955-34.451-76.955-76.95 0-5.251 0.531-10.372 1.533-15.327 7.108 35.15 38.172 61.61 75.422 61.61z"
+      fill="url(#SVGID_4_)"
+  />
+<path
+      d="m10.273 392.09c0 49.683 40.426 90.109 90.113 90.109h341.79c2.573 0 5.13-0.088 7.664-0.235 69.508-3.988 124.84-61.771 124.84-132.26 0-73.058-59.438-132.5-132.5-132.5-1.95 0-3.889 0.061-5.835 0.148-30.132-59.567-91.89-100.52-163.08-100.52-100.73 0-182.69 81.949-182.69 182.68 0 1.001 0.065 1.994 0.074 2.987-45.118 4.88-80.371 43.19-80.371 89.59zm13.159 0c0-42.507 34.452-76.959 76.955-76.959 23.205 0 43.992 10.285 58.104 26.527 3.188 3.666 6.027 7.629 8.478 11.861 3.505 6.035 6.192 12.601 7.96 19.542 2.647 9.615 14.596 6.602 13.254-1.245-2.586-11.2-7.258-21.606-13.599-30.794 0.009-0.009 0.022-0.018 0.031-0.026-2.561-3.701-5.391-7.202-8.452-10.477-0.013 0.018-0.021 0.026-0.026 0.035-11.3-12.07-25.869-21.04-42.276-25.473-0.022-0.009-0.048-0.018-0.074-0.026-1.385-0.375-2.787-0.705-4.198-1.01-0.13-0.035-0.257-0.069-0.392-0.096-1.315-0.279-2.643-0.522-3.984-0.749-0.218-0.026-0.427-0.078-0.649-0.113-1.271-0.201-2.556-0.366-3.84-0.505-0.279-0.035-0.557-0.079-0.84-0.113-1.298-0.139-2.613-0.227-3.937-0.305-0.261-0.026-0.522-0.052-0.788-0.07-1.581-0.078-3.17-0.122-4.772-0.122 1.146 0 2.282 0.052 3.41 0.087-0.013-0.845-0.065-1.689-0.065-2.543 0-93.619 75.905-169.52 169.53-169.52 64.366 0 120.35 35.871 149.06 88.725-0.283 0.026-0.566 0.069-0.841 0.113-1.833 0.287-3.648 0.609-5.456 0.975-0.944 0.191-1.881 0.409-2.83 0.627-0.923 0.2-1.855 0.41-2.778 0.636-1.093 0.27-2.182 0.558-3.266 0.854-0.701 0.191-1.397 0.392-2.104 0.601-1.201 0.348-2.407 0.705-3.597 1.097-0.296 0.087-0.596 0.2-0.901 0.296-4.559 1.524-9.03 3.275-13.367 5.251-0.014 0.009-0.026 0.009-0.035 0.018-32.009 14.674-57.19 41.724-69.404 75-0.009 0-0.018-0.009-0.026-0.009-1.528 4.171-2.848 8.456-3.953 12.819h0.013c-0.631 2.5-1.188 5.025-1.681 7.577-0.078 0.383-0.14 0.775-0.209 1.149-0.379 2.099-0.71 4.197-0.997 6.313-0.087 0.653-0.174 1.315-0.253 1.977-0.227 1.959-0.413 3.928-0.557 5.905-0.048 0.662-0.113 1.315-0.145 1.968-0.156 2.587-0.252 5.199-0.252 7.821 0 0.548 0.035 1.088 0.043 1.637 0.009 1.28 0.048 2.569 0.096 3.849 0.074 1.716 0.188 3.422 0.322 5.121 1.246 9.867 14.762 7.394 13.099-1.236-0.235-3.092-0.401-6.209-0.401-9.371 0-8.43 0.889-16.66 2.557-24.602 0.967-4.651 2.238-9.197 3.74-13.629 15.941-47.149 60.513-81.104 113.04-81.104 65.907 0 119.34 53.428 119.34 119.34 0 65.907-53.433 119.34-119.34 119.34h-341.77c-42.506-0.02-76.958-34.47-76.958-76.97zm72.069-89.99c-0.044 0.009-0.092 0.018-0.14 0.018 0.049 0 0.097-0.01 0.14-0.02z"
+      fill="#FFFFFF"
+  />
+<defs
+    >
+	<filter
+        id="Adobe_OpacityMaskFilter_2_"
+        height="116.78"
+        width="172.68"
+        y="237.86"
+        x="354.43"
+        filterUnits="userSpaceOnUse"
+      >
+		<feFlood
+          style="flood-color:white"
+          result="back"
+      />
+		<feBlend
+          mode="normal"
+          in2="back"
+          in="SourceGraphic"
+      />
+	</filter
+    >
+</defs
+  >
+<mask
+      id="SVGID_5_"
+      height="116.784"
+      width="172.681"
+      y="237.857"
+      x="354.434"
+      maskUnits="userSpaceOnUse"
+    >
+	<g
+        filter="url(#Adobe_OpacityMaskFilter_2_)"
+      >
+		<defs
+        >
+				<filter
+            id="Adobe_OpacityMaskFilter_3_"
+            height="116.78"
+            width="172.68"
+            y="237.86"
+            x="354.43"
+            filterUnits="userSpaceOnUse"
+          >
+				<feFlood
+              style="flood-color:white"
+              result="back"
+          />
+				<feBlend
+              mode="normal"
+              in2="back"
+              in="SourceGraphic"
+          />
+			</filter
+        >
+		</defs
+      >
+		<mask
+          id="SVGID_5_"
+          height="116.784"
+          width="172.681"
+          y="237.857"
+          x="354.434"
+          maskUnits="userSpaceOnUse"
+        >
+		</mask
+      >
+			<linearGradient
+          id="SVGID_6_"
+          y2="237.86"
+          gradientUnits="userSpaceOnUse"
+          x2="355.6"
+          gradientTransform="matrix(-1 0 0 1 796.37 0)"
+          y1="354.64"
+          x1="355.6"
+        >
+			<stop
+            style="stop-color:#000000"
+            offset="0"
+        />
+			<stop
+            style="stop-color:#808080"
+            offset="1"
+        />
+		</linearGradient
+      >
+		<path
+          mask="url(#SVGID_5_)"
+          d="m354.43 296.25c0 32.248 38.653 58.392 86.342 58.392 47.685 0 86.339-26.144 86.339-58.392 0-32.249-38.654-58.392-86.339-58.392-47.68 0-86.34 26.14-86.34 58.39z"
+          fill="url(#SVGID_6_)"
+      />
+	</g
+    >
+</mask
+  >
+<linearGradient
+      id="SVGID_7_"
+      y2="237.86"
+      gradientUnits="userSpaceOnUse"
+      x2="355.6"
+      gradientTransform="matrix(-1 0 0 1 796.37 0)"
+      y1="354.64"
+      x1="355.6"
+    >
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.47"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.45"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      d="m354.43 296.25c0 32.248 38.653 58.392 86.342 58.392 47.685 0 86.339-26.144 86.339-58.392 0-32.249-38.654-58.392-86.339-58.392-47.68 0-86.34 26.14-86.34 58.39z"
+      fill="url(#SVGID_7_)"
+  />
+<defs
+    >
+	<filter
+        id="Adobe_OpacityMaskFilter_4_"
+        height="69.173"
+        width="110.93"
+        y="326.48"
+        x="43.919"
+        filterUnits="userSpaceOnUse"
+      >
+		<feFlood
+          style="flood-color:white"
+          result="back"
+      />
+		<feBlend
+          mode="normal"
+          in2="back"
+          in="SourceGraphic"
+      />
+	</filter
+    >
+</defs
+  >
+<mask
+      id="SVGID_8_"
+      height="69.173"
+      width="110.932"
+      y="326.477"
+      x="43.919"
+      maskUnits="userSpaceOnUse"
+    >
+	<g
+        filter="url(#Adobe_OpacityMaskFilter_4_)"
+      >
+		<defs
+        >
+			<filter
+            id="Adobe_OpacityMaskFilter_5_"
+            height="69.173"
+            width="110.93"
+            y="326.48"
+            x="43.919"
+            filterUnits="userSpaceOnUse"
+          >
+				<feFlood
+              style="flood-color:white"
+              result="back"
+          />
+				<feBlend
+              mode="normal"
+              in2="back"
+              in="SourceGraphic"
+          />
+			</filter
+        >
+		</defs
+      >
+		<mask
+          id="SVGID_8_"
+          height="69.173"
+          width="110.932"
+          y="326.477"
+          x="43.919"
+          maskUnits="userSpaceOnUse"
+        >
+		</mask
+      >
+			<linearGradient
+          id="SVGID_9_"
+          y2="326.48"
+          gradientUnits="userSpaceOnUse"
+          x2="696.99"
+          gradientTransform="matrix(-1 0 0 1 796.37 0)"
+          y1="395.65"
+          x1="696.99"
+        >
+			<stop
+            style="stop-color:#000000"
+            offset="0"
+        />
+			<stop
+            style="stop-color:#808080"
+            offset="1"
+        />
+		</linearGradient
+      >
+		<ellipse
+          mask="url(#SVGID_8_)"
+          rx="55.466"
+          ry="34.583"
+          cy="361.07"
+          cx="99.385"
+          fill="url(#SVGID_9_)"
+      />
+	</g
+    >
+</mask
+  >
+<linearGradient
+      id="SVGID_10_"
+      y2="326.48"
+      gradientUnits="userSpaceOnUse"
+      x2="696.99"
+      gradientTransform="matrix(-1 0 0 1 796.37 0)"
+      y1="395.65"
+      x1="696.99"
+    >
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.27"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.408"
+        offset=".8625"
+    />
+	<stop
+        style="stop-color:#F2F2F2;stop-opacity:.43"
+        offset="1"
+    />
+</linearGradient
+  >
+<ellipse
+      cy="361.07"
+      cx="99.385"
+      rx="55.466"
+      ry="34.583"
+      fill="url(#SVGID_10_)"
+  />
+<polygon
+      points="192.1 722.84 227.72 722.84 269.77 636.12 149.26 646.94 233.06 479.7 331.28 479.7 223.64 614.44 355.24 600.74 259.93 722.84 299.64 722.84 220.44 779.94"
+      fill="#FFF9C7"
+  />
+<linearGradient
+      id="SVGID_11_"
+      y2="484.79"
+      gradientUnits="userSpaceOnUse"
+      x2="250.95"
+      y1="769.42"
+      x1="250.95"
+    >
+	<stop
+        style="stop-color:#F3E600"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#F9EA32"
+        offset="1"
+    />
+</linearGradient
+  >
+<polygon
+      points="239.34 484.79 317.84 484.79 208.92 621.13 340.69 607.42 246.63 727.93 281.58 727.93 224.03 769.42 203.44 727.93 234.05 727.93 281.58 629.92 161.2 640.73"
+      fill="url(#SVGID_11_)"
+  />
+<metadata
+    ><rdf:RDF
+      ><cc:Work
+        ><dc:format
+          >image/svg+xml</dc:format
+        ><dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        /><cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        /><dc:publisher
+          ><cc:Agent
+              rdf:about="http://openclipart.org/"
+            ><dc:title
+              >Openclipart</dc:title
+            ></cc:Agent
+          ></dc:publisher
+        ><dc:title
+          >Meteo temporale</dc:title
+        ><dc:date
+          >2011-11-01T03:00:21</dc:date
+        ><dc:description
+        /><dc:source
+          >https://openclipart.org/detail/165488/meteo-temporale-by-emilie.rollandin</dc:source
+        ><dc:creator
+          ><cc:Agent
+            ><dc:title
+              >emilie.rollandin</dc:title
+            ></cc:Agent
+          ></dc:creator
+        ><dc:subject
+          ><rdf:Bag
+            ><rdf:li
+              >Meteo temporale</rdf:li
+            ><rdf:li
+              >weather</rdf:li
+            ></rdf:Bag
+          ></dc:subject
+        ></cc:Work
+      ><cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        ><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        /></cc:License
+      ></rdf:RDF
+    ></metadata
+  ></svg
+>
