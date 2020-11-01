@@ -53,7 +53,7 @@ const Index = props => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        // dispatch(pokemonSearchRequest(query));
+        //dispatch(pokemonSearchRequest(query));
     };
 
     const timeout = useRef();
@@ -64,8 +64,10 @@ const Index = props => {
     }
 
     const onChange = (e) => {
+        e.persist();
+        const word = e.target.value;
         debounce(() => 
-            dispatch(pokemonSearchRequest(e.target.value))
+            dispatch(pokemonSearchRequest(word))
         , 500);
     }
 

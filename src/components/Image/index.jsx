@@ -27,6 +27,13 @@ const Div = styled.div `
                 transform: scale(1.2);
             }
         }
+
+        .id {
+            padding: 0.5 0rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: black;
+        }
     }
 `;
 
@@ -43,7 +50,10 @@ function Image({pokemon}){
                     alt={pokemon.name}
                     loading="lazy"
                 />
-                <figcaption>{pokemon.name}</figcaption>
+                <figcaption>
+                    {pokemon.name}
+                    <div className="id">{`#${id}`}</div>
+                </figcaption>
             </figure>
         </Div>
     )
