@@ -6,7 +6,7 @@ import {
 
 export const pokemonFetchRequest = () => {
     return (dispatch, getState) => {
-        [...Array(100)].map( async (el, number) => { //151
+        [...Array(151)].map( async (el, number) => { //151
             let {data} = await pokeapi.get(`/pokemon/${(number + 1)}`)
             const { id, name, types, base_experience, weight } = data;
 
