@@ -16,10 +16,7 @@ import rock from './assets/img/rock.svg';
 import electric from './assets/img/electric.svg';
 import ghost from './assets/img/ghost.svg';
 import flying from './assets/img/flying.svg';
-import water from './assets/img/water.svg';
-import fighting from './assets/img/fighting.svg';
 import fairy from './assets/img/fairy.svg';
-import psychic from './assets/img/psychic.svg';
 
 const Section = styled(animated.section) `
     display: flex;
@@ -84,11 +81,7 @@ function App() {
                             background-position: center;
                             background-repeat: no-repeat;
                         }
-                        &--water { 
-                            background-image: url('${water}');
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
+                        &--water {}
                         &--fire { 
                             background-image: url('${fire}');
                             background-position: center;
@@ -120,22 +113,14 @@ function App() {
                             background-position: center;
                             background-repeat: no-repeat;
                         }
-                        &--psychic {
-                            background-image: url('${psychic}');
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
+                        &--psychic {}
                         &--ice { color: #7FCFEA; }
                         &--rock { 
                             background-image: url('${rock}');
                             background-position: center;
                             background-repeat: no-repeat;    
                         }
-                        &--fighting {
-                            background-image: url('${fighting}');
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
+                        &--fighting {}
                         &--dragon { color: #0c68bf; }
                         &--ghost { 
                             background-image: url('${ghost}');
