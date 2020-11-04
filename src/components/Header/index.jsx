@@ -49,12 +49,6 @@ const Button = styled.button `
 
 const Index = props => {
     const dispatch = useDispatch();
-    const [query, setQuery] = useState('');
-
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-        //dispatch(pokemonSearchRequest(query));
-    };
 
     const timeout = useRef();
 
@@ -74,13 +68,12 @@ const Index = props => {
     return (
         <Header>
             <img src={logo} alt="logo" />
-            <form onSubmit={onFormSubmit}>
+            <form>
                 <Input 
                     type="text" 
                     placeholder="who are you looking for?" 
                     onChange={onChange}
                 />
-                <Button type="submit"><FaSearch /></Button>
             </form>
             {props.children}
         </Header>

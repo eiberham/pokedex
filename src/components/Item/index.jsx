@@ -49,6 +49,14 @@ const Scene = styled.div `
             justify-content: space-between;
             align-items: center;
         }
+
+        .card__face__button {
+            position: absolute;
+            right: 2rem;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 2px;
+        }
         
     }
 
@@ -62,6 +70,10 @@ const Item = ({item}) => {
 
     function flip() {
         ref.current.classList.toggle('is-flipped');
+    }
+
+    function getStats(e) {
+        e.stopPropagation();
     }
 
     if (!item) return null;
@@ -78,6 +90,13 @@ const Item = ({item}) => {
                 </div>
                 <div className="card__face--back">
                     <div className={`type type--${type}`} />
+                    <button 
+                        type="button" 
+                        className="card__face__button" 
+                        onClick={getStats}
+                    >
+                        Stats
+                    </button>
                 </div>
             </div>
         </Scene>

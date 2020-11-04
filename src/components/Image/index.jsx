@@ -52,7 +52,7 @@ function Image({pokemon}){
                 />
                 <figcaption>
                     {pokemon.name}
-                    <div className="id">{`#${id}`}</div>
+                    <div className="id">{`#${id.toString().padStart(3, "0")}`}</div>
                 </figcaption>
             </figure>
         </Div>
