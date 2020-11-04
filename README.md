@@ -1,21 +1,16 @@
 ## Pokedex.
 
 This is a pokedex built with react leveraging basic hooks functionality and the pokémon api,
-for the ui i used flexbox for positioning elements and styled components to add it some 
+for the ui I used flexbox for positioning elements and styled components to add it some 
 styling.
 
-In addition components lazy load was added through lazy and suspense.
-
-You can see a list of the 151 pokémons available in the api and search any, there's a detail
-component where you can see a picture of the pokémon and relevant stats like type and base
-experience.
-
-As a side note, webpack configurations were added.
+You can see a list of the 151 pokémons available in the api and search any, when you click on a
+card it flips so that you can see its back face.
 
 Below you can see a screenshot of the end result:
 
 <p align="center">
-  <img src="pokedex.png" />
+  <img src="screenshot.png" />
 </p>
 
 <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none;">
@@ -28,7 +23,9 @@ Below you can see a screenshot of the end result:
   </tr>
 </table>
 
-## How to run it ?
+Or if you wanna check it out live I deployed it to github pages --> [here](https://eiberham.github.io/pokedex/#/)
+
+## How to run it locally ?
 
 First step, clone the repo.
 
@@ -39,25 +36,17 @@ foo@bar:~$ git clone https://github.com/eiberham/pokedex.git
 Then run the following command within the project folder to install all the dependecies:
 
 ```console
-foo@bar:~$ npm install
+foo@bar:~$ yarn install
 ```
 
 Afterwards run the following command:
 
 ```console
-foo@bar:~$ npm run start
+foo@bar:~$ yarn run start
 ```
 
-Now if you go on localhost:8080/pokemon you should see it.
+Now if you go on http://127.0.0.1:8084/#/ you'll see it.
 
 Enjoy!
-
-## Available Scripts
-
-You can find all available scripts in the package.json file
-
-## Note
-
-It was solely a practice to start learning hooks stuff, i'm currently refactoring the code so some described functionality might not work.
 
 
