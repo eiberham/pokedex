@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from '@emotion/styled';
 import PropTypes from "prop-types";
 import Image from '../Image';
@@ -67,6 +67,11 @@ const Scene = styled.div `
 
 const Item = ({item}) => {
     const ref = useRef(null);
+    const [showStats, setShowStats] = useState(false);
+
+    useEffect(() => {
+        document.querySelector('.slider').classList.toggle('close');
+    }, [showStats])
 
     function flip() {
         ref.current.classList.toggle('is-flipped');
@@ -74,6 +79,7 @@ const Item = ({item}) => {
 
     function getStats(e) {
         e.stopPropagation();
+        setShowStats(!showStats);
     }
 
     if (!item) return null;

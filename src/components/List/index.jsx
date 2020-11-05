@@ -4,6 +4,7 @@ import { pokemonFetchRequest } from '../../actions';
 
 import Item from '../Item';
 import Loader from '../Loader';
+import Detail from '../Detail';
 
 const List = () => {
     const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const List = () => {
                     ))}
                 </React.Fragment>
             )}
+            <Detail />
         </>
     )
 };

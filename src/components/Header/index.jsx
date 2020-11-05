@@ -33,7 +33,7 @@ const Input = styled.input `
     height: 2.2rem;
     border: none;
     &:focus {
-        border: none;
+        outline: none;
     }
     @media (max-width: 450px) {
         width: 60vw;
