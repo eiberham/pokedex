@@ -15,6 +15,10 @@ const Slider = styled.div `
         top: 100%;
         height: 0;
     }
+
+    .name {
+        text-transform: uppercase;
+    }
 `;
 
 const Close = styled.button `
@@ -38,7 +42,9 @@ const Detail = props => {
         const detail = document.querySelector('.slider');
         const observer = new MutationObserver(() => {
             const id = detail.getAttribute('data-id');
-            setId(id);
+            setId(
+                parseInt(id)
+            );
         })
         observer.observe(detail, { attributes: true });
         return () => observer.disconnect();
@@ -48,16 +54,23 @@ const Detail = props => {
         ref.current.classList.toggle('close')
     }
     
-    const pokemon = items.find(item => item.id === id)
+    const pokemon = items.some(item => item.id === id) 
+        ? items.find(item => item.id === id) 
+        : null;
 
     return (
         <>
-            <Slider className="slider close" ref={ref} data-id="">
+            <Slider 
+                className="slider close" 
+                ref={ref} 
+                data-id="" 
+                onBlur={ref.current && ref.current.classList.toggle('close')}
+            >
                 <Close onClick={toggleClose} />
                 <div>
                     {pokemon && (
                         <>
-                            <h1>{pokemon.name}</h1>
+                            <h1 className="name">{pokemon.name}</h1>
                             <img 
                                 src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
                                 alt="image" 
