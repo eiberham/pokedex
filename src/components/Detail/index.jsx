@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import styled from '@emotion/styled';
 
 const Slider = styled.div `
@@ -29,16 +30,43 @@ const Close = styled.button `
 `;
 
 const Detail = props => {
-    const ref = useRef();
+    const [id, setId] = useState(1);
+    const ref = useRef(null);
+    const { items } = useSelector(state => state.pokemons);
+
+    useEffect(() => {
+        const detail = document.querySelector('.slider');
+        const observer = new MutationObserver(() => {
+            const id = detail.getAttribute('data-id');
+            setId(id);
+        })
+        observer.observe(detail, { attributes: true });
+        return () => observer.disconnect();
+    }, [id])
 
     function toggleClose(){
         ref.current.classList.toggle('close')
     }
+    
+    const pokemon = items.find(item => item.id === id)
+
     return (
         <>
-            <Slider className="slider close" ref={ref}>
+            <Slider className="slider close" ref={ref} data-id="">
                 <Close onClick={toggleClose} />
-                Detail
+                <div>
+                    {pokemon && (
+                        <>
+                            <h1>{pokemon.name}</h1>
+                            <img 
+                                src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
+                                alt="image" 
+                                width="180"
+                                height="180"
+                            />
+                        </>
+                    )}
+                </div>
             </Slider>
         </>
     );

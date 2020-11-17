@@ -12,7 +12,7 @@ const Header = styled.div `
     background: red;
     height: 350px;
     clip-path: polygon(50% 0%, 100% 0, 100% 79%, 71% 90%, 41% 75%, 25% 88%, 0 92%, 0% 43%, 0 0);
-    z-index: 2;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
