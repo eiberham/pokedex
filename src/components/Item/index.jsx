@@ -70,7 +70,9 @@ const Item = ({item}) => {
     const [showStats, setShowStats] = useState(false);
 
     useEffect(() => {
-        document.querySelector('.slider').classList.toggle('close');
+        const detail = document.querySelector('.slider');
+        detail.setAttribute('data-id', item.id);
+        detail.classList.toggle('close');
     }, [showStats])
 
     function flip() {
