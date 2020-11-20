@@ -5,6 +5,8 @@ import Image from '../Image';
 import LazyLoad from "react-lazyload";
 import topography from '../../../topography.svg'
 
+import colors  from '../../colors';
+
 const Scene = styled.div `
     perspective: 1000px;
     min-width: 30%;
@@ -56,6 +58,73 @@ const Scene = styled.div `
             padding: 0.8rem;
             border: none;
             border-radius: 2px;
+            font-weight: bold;
+            color: #fff;
+
+            &--grass {
+                background-color: ${colors.grass};
+                filter: brightness(70%);
+            }
+            &--water {
+                background-color: ${colors.water};
+                filter: brightness(70%);
+            }
+            &--fire {
+                background-color: ${colors.fire};
+                filter: brightness(70%);
+            }
+            &--bug {
+                background-color: ${colors.bug};
+                filter: brightness(70%);
+            }
+            &--normal {
+                background-color: ${colors.normal};
+                filter: brightness(70%);
+            }
+            &--poison { 
+                background-color: ${colors.poison};
+                filter: brightness(70%);
+            }
+            &--electric { 
+                background-color: ${colors.electric};
+                filter: brightness(70%);
+            }
+            &--ground {
+                background-color: ${colors.ground};
+                filter: brightness(70%);
+            }
+            &--fairy {
+                background-color: ${colors.fairy};
+                filter: brightness(70%);
+            }
+            &--psychic {
+                background-color: ${colors.psychic};
+                filter: brightness(70%);
+            }
+            &--ice {
+                background-color: ${colors.ice};
+                filter: brightness(70%);
+            }
+            &--rock {
+                background-color: ${colors.rock};
+                filter: brightness(70%);     
+            }
+            &--fighting {
+                background-color: ${colors.fighting};
+                filter: brightness(70%);
+            }
+            &--dragon {
+                background-color: ${colors.dragon};
+                filter: brightness(70%);
+            }
+            &--ghost {
+                background-color: ${colors.ghost};
+                filter: brightness(70%);
+            }
+            &--flying {
+                background-color: ${colors.flying};
+                filter: brightness(70%);
+            }
         }
         
     }
@@ -100,7 +169,7 @@ const Item = ({item}) => {
                     <div className={`type type--${type}`} />
                     <button 
                         type="button" 
-                        className="card__face__button" 
+                        className={`card__face__button card__face__button--${type}`} 
                         onClick={getStats}
                     >
                         Stats
