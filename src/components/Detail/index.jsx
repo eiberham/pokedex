@@ -33,7 +33,7 @@ const Close = styled.button `
     border-radius: 10px;
 `;
 
-const Detail = props => {
+const Detail = () => {
     const [id, setId] = useState(1);
     const ref = useRef(null);
     const { items } = useSelector(state => state.pokemons);
