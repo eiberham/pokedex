@@ -8,6 +8,7 @@ const Slider = styled.div `
     height: 45%;
     top: 0;
     overflow: hidden;
+    padding: 4rem;
     background-color: #1F2327; color: #FFF;
     transition: all 1s;
 
@@ -18,6 +19,26 @@ const Slider = styled.div `
 
     .name {
         text-transform: uppercase;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        color: red;
+        line-height: 1.2;
     }
 `;
 
@@ -67,16 +88,22 @@ const Detail = () => {
                 onBlur={ref.current && ref.current.classList.toggle('close')}
             >
                 <Close onClick={toggleClose} />
-                <div>
+                <div className="wrapper">
                     {pokemon && (
                         <>
-                            <h1 className="name">{pokemon.name}</h1>
-                            <img 
-                                src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
-                                alt="image" 
-                                width="180"
-                                height="180"
-                            />
+                            <div className="info">
+                                <h1 className="name">{pokemon.name}</h1>
+                                <img 
+                                    src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
+                                    alt="image" 
+                                    width="180"
+                                    height="180"
+                                />
+                            </div>
+                            <div className="stats">
+                                <span>Base Experience: {pokemon.base_experience}</span>
+                                <span>Weight: {pokemon.weight}</span>
+                            </div>
                         </>
                     )}
                 </div>

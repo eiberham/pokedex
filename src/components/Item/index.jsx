@@ -40,7 +40,7 @@ const Scene = styled.div `
         .card__face--front {
             background-image: url('${topography}');
             background-position: 0 0;
-            background-size: 40%;
+            background-size: 20%;
             transform: rotateY(0deg);
             z-index: 2;
         }
