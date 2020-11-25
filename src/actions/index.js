@@ -1,4 +1,3 @@
-import pokeapi from '../apis';
 import {
     POKEMON_FETCH_SUCCESS,
     POKEMON_STATS_SUCCESS,
@@ -8,7 +7,8 @@ import {
 export const pokemonFetchRequest = () => {
     return (dispatch, getState) => {
         [...Array(151)].map( async (el, number) => {
-            let {data} = await pokeapi.get(`/pokemon/${(number + 1)}`)
+            const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${(number + 1)}`);
+            let data = await request.json();
             const { id, name, types, base_experience, weight } = data;
 
             dispatch(pokemonFetchSuccess({ 
@@ -25,7 +25,8 @@ export const pokemonFetchSuccess = data => ({
 
 export const pokemonStatsRequest = id => {
     return async (dispatch, getState) => {
-        const {data} = await pokeapi.get(`/pokemon/${id}`);
+        const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const data = await request.json();
         dispatch(pokemonStatsSuccess(data));
     }
 }

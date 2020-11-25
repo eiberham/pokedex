@@ -1,7 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
-import { FaSearch } from 'react-icons/fa';
 import logo from '../../logo.svg';
 import { pokemonSearchRequest } from '../../actions';
 

@@ -26,4 +26,7 @@ yarn-error.log*
 #jetbrains
 .idea
 
+#vscode
+.vscode
+
 

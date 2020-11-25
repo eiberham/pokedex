@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from '@emotion/styled';
 import PropTypes from "prop-types";
 import Image from '../Image';
-import LazyLoad from "react-lazyload";
 import topography from '../../../topography.svg'
 
 import colors  from '../../colors';
@@ -161,9 +160,7 @@ const Item = ({item}) => {
         <Scene>
             <div className={`card --${type}`} ref={ref} onClick={flip}>
                 <div className="card__face--front">
-                    <LazyLoad once height={140} overflow throttle={100}>
-                        <Image pokemon={item} key={item.name} />
-                    </LazyLoad>
+                    <Image pokemon={item} key={item.name} />
                 </div>
                 <div className="card__face--back">
                     <div className={`type type--${type}`} />
