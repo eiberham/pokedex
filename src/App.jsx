@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, HashRouter, Switch } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
-import {useSpring, animated} from 'react-spring';
 import Header from './components/Header';
 import List from './components/List';
 import './app.scss';
@@ -18,7 +17,7 @@ import ghost from './assets/img/ghost.svg';
 import flying from './assets/img/flying.svg';
 import fairy from './assets/img/fairy.svg';
 
-const Section = styled(animated.section) `
+const Section = styled.section `
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -48,8 +47,6 @@ const Wrap = styled.span `
 `;
 
 function App() {
-    // const props = useSpring({opacity: 1, from: {opacity: 0}});
-
     return (
         <div>
             <Global
