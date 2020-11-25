@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
+
+import { pokemonStatsRequest } from '../../actions';
 
 const Slider = styled.div `
     position: absolute;
@@ -23,7 +25,7 @@ const Slider = styled.div `
 
     .wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -56,28 +58,29 @@ const Close = styled.button `
 
 const Detail = () => {
     const [id, setId] = useState(1);
+    const dispatch = useDispatch();
     const ref = useRef(null);
-    const { items } = useSelector(state => state.pokemons);
+    const { stats } = useSelector(state => state.pokemons);
 
     useEffect(() => {
         const detail = document.querySelector('.slider');
         const observer = new MutationObserver(() => {
             const id = detail.getAttribute('data-id');
-            setId(
-                parseInt(id)
-            );
+            setId(parseInt(id));
         })
         observer.observe(detail, { attributes: true });
         return () => observer.disconnect();
+    }, [id])
+
+    useEffect(() => {
+        dispatch(pokemonStatsRequest(id))
     }, [id])
 
     function toggleClose(){
         ref.current.classList.toggle('close')
     }
     
-    const pokemon = items.some(item => item.id === id) 
-        ? items.find(item => item.id === id) 
-        : null;
+    if (!stats) return <></>;
 
     return (
         <>
@@ -85,14 +88,14 @@ const Detail = () => {
                 className="slider close" 
                 ref={ref} 
                 data-id="" 
-                onBlur={ref.current && ref.current.classList.toggle('close')}
+                onBlur={() => ref.current && ref.current.classList.toggle('close')}
             >
                 <Close onClick={toggleClose} />
                 <div className="wrapper">
-                    {pokemon && (
+                    {stats && (
                         <>
                             <div className="info">
-                                <h1 className="name">{pokemon.name}</h1>
+                                <h1 className="name">{stats.name}</h1>
                                 <img 
                                     src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
                                     alt="image" 
@@ -101,8 +104,13 @@ const Detail = () => {
                                 />
                             </div>
                             <div className="stats">
-                                <span>Base Experience: {pokemon.base_experience}</span>
-                                <span>Weight: {pokemon.weight}</span>
+                                <span>Id: {stats.id}</span>
+                                <span>Base Experience: {stats.base_experience}</span>
+                                <span>Weight: {stats.weight}</span>
+                                <span>Height: {stats.height}</span>
+                                {stats.stats && stats.stats.map(stat => (
+                                    <span>{stat.stat.name}: {stat.base_stat}</span>
+                                ))}
                             </div>
                         </>
                     )}
