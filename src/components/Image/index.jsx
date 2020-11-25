@@ -63,7 +63,7 @@ Image.propTypes = {
     pokemon: PropTypes.shape({
         name: PropTypes.string
     }).isRequired,
-    handleClick: PropTypes.func.isRequired
+    handleClick: PropTypes.func
 };
 
 export default Image;

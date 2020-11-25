@@ -1,9 +1,10 @@
 import {
     POKEMON_FETCH_SUCCESS,
+    POKEMON_STATS_SUCCESS,
     POKEMON_SEARCH_SUCCESS
 } from '../constants';
 
-const INITIAL_STATE = { items: [], search: ''};
+const INITIAL_STATE = { items: [], search: '', stats: {}};
 
 const pokemons = (state = INITIAL_STATE, action) => {
     const { payload, type } = action;
@@ -17,6 +18,11 @@ const pokemons = (state = INITIAL_STATE, action) => {
                         ...[{ ...payload}]
                     ])
                 ]
+            }
+        case POKEMON_STATS_SUCCESS:
+            return {
+                ...state,
+                stats: { ...payload}
             }
         case POKEMON_SEARCH_SUCCESS:
             return {
