@@ -138,9 +138,10 @@ const Item = ({item}) => {
     const [showStats, setShowStats] = useState(false);
 
     useEffect(() => {
-        const detail = document.querySelector('.slider');
-        detail.setAttribute('data-id', item.id);
-        detail.classList.toggle('close');
+        const stats = document.querySelector('.slider');
+        stats.setAttribute('data-id', item.id);
+        stats.classList.toggle('close');
+        stats.classList.toggle('hide');
     }, [showStats])
 
     function flip() {
