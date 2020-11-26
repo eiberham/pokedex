@@ -4,11 +4,12 @@ import { pokemonFetchRequest } from '../../actions';
 
 import Item from '../Item';
 import Loader from '../Loader';
-import Detail from '../Detail';
+import Stats from '../Stats';
 
-const List = () => {
+export default function() {
     const dispatch = useDispatch();
-    const { items, search } = useSelector(state => state.pokemons);
+    const items = useSelector(state => state.pokemons.items);
+    const search = useSelector(state => state.pokemons.search);
 
     useEffect(() => {
         dispatch(pokemonFetchRequest())
@@ -28,9 +29,7 @@ const List = () => {
                     ))}
                 </React.Fragment>
             )}
-            <Detail />
+            <Stats />
         </>
     )
 };
-
-export default List;

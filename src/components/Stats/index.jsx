@@ -4,24 +4,21 @@ import styled from '@emotion/styled';
 
 import { pokemonStatsRequest } from '../../actions';
 
-const Slider = styled.div `
+const Stats = styled.div `
     position: absolute;
     width: 100%;
     height: 45%;
     top: 0;
     overflow: hidden;
     padding: 4rem;
-    background-color: #1F2327; color: #FFF;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    color: #FFF;
     transition: all 1s;
 
-    &.close {
-        top: 100%;
-        height: 0;
-    }
-
-    .name {
-        text-transform: uppercase;
-    }
+    &.hide { display: none; }
 
     .wrapper {
         display: flex;
@@ -29,17 +26,24 @@ const Slider = styled.div `
         align-items: center;
     }
 
-    .info {
+    .pokemon {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        .name { 
+            text-transform: uppercase; 
+            text-align: center;
+        }
+
     }
 
-    .stats {
+    .summary {
         display: flex;
         flex-direction: column;
         text-transform: uppercase;
-        color: red;
+        font-weight: bolder;
+        color: #fff;
         line-height: 1.2;
     }
 `;
@@ -56,45 +60,56 @@ const Close = styled.button `
     border-radius: 10px;
 `;
 
-const Detail = () => {
-    const [id, setId] = useState(1);
+export default function() {
+    const [id, setId] = useState("");
     const dispatch = useDispatch();
     const ref = useRef(null);
-    const { stats } = useSelector(state => state.pokemons);
+    const stats = useSelector(state => state.pokemons.stats);
+    let type = null;
 
     useEffect(() => {
-        const detail = document.querySelector('.slider');
-        const observer = new MutationObserver(() => {
-            const id = detail.getAttribute('data-id');
-            setId(parseInt(id));
+        if (!ref.current.classList.contains('hide'))
+            ref.current.classList.add('hide')
+        const stats = document.querySelector('.stats');
+        const observer = new MutationObserver(nodes => {
+            for(const mutation of nodes) {
+                if (mutation.attributeName === 'data-id'){
+                    const id = stats.getAttribute('data-id');
+                    setId(id);
+                }
+            }
         })
-        observer.observe(detail, { attributes: true });
+        observer.observe(stats, { attributes: true });
         return () => observer.disconnect();
-    }, [id])
+    }, [])
 
     useEffect(() => {
-        dispatch(pokemonStatsRequest(id))
+        if (id !== "") dispatch(pokemonStatsRequest(id))
     }, [id])
 
     function toggleClose(){
-        ref.current.classList.toggle('close')
+        ref.current.classList.add('hide')
     }
+
+    if (!stats) return null;
     
-    if (!stats) return <></>;
+    for (var prop in stats.types) {
+        type = stats.types[prop].type.name;
+        break;
+    }
 
     return (
         <>
-            <Slider 
-                className="slider close" 
+            <Stats 
+                className={`stats --${type}`}
                 ref={ref} 
-                data-id="" 
-                onBlur={() => ref.current && ref.current.classList.toggle('close')}
+                data-id={id}
             >
                 <Close onClick={toggleClose} />
                 <div className="wrapper">
                     {stats && (
                         <>
-                            <div className="info">
+                            <div className="pokemon">
                                 <h1 className="name">{stats.name}</h1>
                                 <img 
                                     src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id.toString().padStart(3, "0")}.png`} 
@@ -103,21 +118,19 @@ const Detail = () => {
                                     height="180"
                                 />
                             </div>
-                            <div className="stats">
+                            <div className="summary">
                                 <span>Id: {stats.id}</span>
                                 <span>Base Experience: {stats.base_experience}</span>
                                 <span>Weight: {stats.weight}</span>
                                 <span>Height: {stats.height}</span>
                                 {stats.stats && stats.stats.map(stat => (
-                                    <span>{stat.stat.name}: {stat.base_stat}</span>
+                                    <span key={`stat-${stat.stat.name}`}>{stat.stat.name}: {stat.base_stat}</span>
                                 ))}
                             </div>
                         </>
                     )}
                 </div>
-            </Slider>
+            </Stats>
         </>
     );
 }
-
-export default Detail;

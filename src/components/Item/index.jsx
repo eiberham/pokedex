@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import styled from '@emotion/styled';
 import PropTypes from "prop-types";
 import Image from '../Image';
@@ -135,21 +135,16 @@ const Scene = styled.div `
 
 const Item = ({item}) => {
     const ref = useRef(null);
-    const [showStats, setShowStats] = useState(false);
-
-    useEffect(() => {
-        const detail = document.querySelector('.slider');
-        detail.setAttribute('data-id', item.id);
-        detail.classList.toggle('close');
-    }, [showStats])
 
     function flip() {
         ref.current.classList.toggle('is-flipped');
     }
 
-    function getStats(e) {
-        e.stopPropagation();
-        setShowStats(!showStats);
+    function toggleStats(event) {
+        event.preventDefault()
+        const stats = document.querySelector('.stats');
+        if (stats.classList.contains('hide')) stats.classList.remove('hide');
+        stats.setAttribute('data-id', item.id);
     }
 
     if (!item) return null;
@@ -167,7 +162,7 @@ const Item = ({item}) => {
                     <button 
                         type="button" 
                         className={`card__face__button card__face__button--${type}`} 
-                        onClick={getStats}
+                        onClick={toggleStats}
                     >
                         Stats
                     </button>
