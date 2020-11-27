@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
+import close from '../../../close.svg';
 
 import { pokemonStatsRequest } from '../../actions';
 
@@ -45,6 +46,12 @@ const Stats = styled.div `
         font-weight: bolder;
         color: #fff;
         line-height: 1.2;
+
+        .stars {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
     }
 `;
 
@@ -52,13 +59,25 @@ const Close = styled.button `
     position: absolute;
     right: 2px;
     top: 0;
-    background-image: url(https://i.e-planning.net/esb/4/1/3fb8/ea7d639f35554c9b/close.png);
-    background-position: center;
-    background-size: cover;
+    background: url("${close}") no-repeat top center;
+    background-size: contain;
+    background-color: white; 
     width: 20px;
     height: 20px;
     border-radius: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
+
+const Star = styled.div `
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: yellow;
+`
 
 export default function() {
     const [id, setId] = useState("");
@@ -119,13 +138,21 @@ export default function() {
                                 />
                             </div>
                             <div className="summary">
-                                <span>Id: {stats.id}</span>
+                                <span>Id: #{stats.id}</span>
                                 <span>Base Experience: {stats.base_experience}</span>
-                                <span>Weight: {stats.weight}</span>
-                                <span>Height: {stats.height}</span>
-                                {stats.stats && stats.stats.map(stat => (
-                                    <span key={`stat-${stat.stat.name}`}>{stat.stat.name}: {stat.base_stat}</span>
-                                ))}
+                                <span>Weight: {stats.weight * 0.1}kg</span>
+                                <span>Height: {stats.height * 0.1}m</span>
+                                {stats.stats && stats.stats.map(stat => {
+                                    const baseline = stat.base_stat * 100 / 255;
+                                    const stars = Math.floor(baseline * 0.1);
+                                    return (
+                                        <span key={`stat-${stat.stat.name}`} className="stars">
+                                            {stat.stat.name}: {Array.from(Array(stars).keys()).map(_ => (
+                                                <Star />
+                                            ))}
+                                        </span>
+                                    )
+                                })}
                             </div>
                         </>
                     )}
